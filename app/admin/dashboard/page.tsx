@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CardSkeleton } from "@/components/ui/loading";
 import { Suspense } from "react";
+import { AnalyticsDashboard } from "@/components/admin/analytics-dashboard";
 
 async function getStats() {
   try {
@@ -47,6 +48,10 @@ export default async function DashboardPage() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
           <p className="text-gray-600 mt-2">Overview of your recruitment activity</p>
+        </div>
+
+        <div className="mb-8">
+          <AnalyticsDashboard />
         </div>
 
         {stats.contactCount === 0 && stats.candidateCount === 0 && (

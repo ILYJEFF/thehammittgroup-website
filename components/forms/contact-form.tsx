@@ -50,6 +50,9 @@ export function ContactForm() {
       });
 
       if (response.ok) {
+        // Track conversion
+        trackConversion("contact_form_submission", 1);
+        
         toast.success("Thank you!", {
           description: "We've received your message and will be in touch soon.",
         });

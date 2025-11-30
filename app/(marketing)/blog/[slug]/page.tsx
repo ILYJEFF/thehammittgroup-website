@@ -13,6 +13,9 @@ import Image from "next/image";
 import { RelatedPosts } from "@/components/blog/related-posts";
 import { SocialShare } from "@/components/blog/social-share";
 import { ReadingTime } from "@/components/blog/reading-time";
+import { PopularPosts } from "@/components/blog/popular-posts";
+import { RecentPostsSidebar } from "@/components/blog/recent-posts-sidebar";
+import { NewsletterSignup } from "@/components/blog/newsletter-signup";
 
 async function getPost(slug: string) {
   try {
@@ -101,7 +104,7 @@ export default async function BlogPostPage({
 
   return (
     <div className="py-16 lg:py-24 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/blog"
           className="text-primary-600 hover:text-primary-700 mb-8 inline-flex items-center gap-2 transition-colors font-medium"
@@ -110,7 +113,8 @@ export default async function BlogPostPage({
           <span>Back to Blog</span>
         </Link>
 
-        <article className="bg-white rounded-lg shadow-sm p-8 md:p-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <article className="lg:col-span-2 bg-white rounded-lg shadow-sm p-8 md:p-12">
           <header className="mb-8 pb-8 border-b border-gray-200">
             <div className="flex gap-2 mb-4 flex-wrap">
               {post.categories.map((cat) => (
@@ -209,6 +213,19 @@ export default async function BlogPostPage({
             </div>
           </div>
         </article>
+
+        {/* Sidebar */}
+        <aside className="lg:col-span-1 space-y-6">
+          <Suspense fallback={<div className="h-64 bg-gray-200 rounded animate-pulse" />}>
+            <NewsletterSignup />
+          </Suspense>
+          <Suspense fallback={<div className="h-64 bg-gray-200 rounded animate-pulse" />}>
+            <PopularPosts />
+          </Suspense>
+          <Suspense fallback={<div className="h-64 bg-gray-200 rounded animate-pulse" />}>
+            <RecentPostsSidebar />
+          </Suspense>
+        </aside>
       </div>
     </div>
   );

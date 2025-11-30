@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select } from "@/components/ui/select";
 import { LoadingSpinner } from "@/components/ui/loading";
+import { trackConversion } from "@/components/analytics/google-analytics";
 
 const candidateSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
@@ -70,6 +71,9 @@ export function CandidateForm() {
       });
 
       if (response.ok) {
+        // Track conversion
+        trackConversion("resume_submission", 1);
+        
         toast.success("Resume submitted!", {
           description: "We'll review your submission and be in touch soon.",
         });
