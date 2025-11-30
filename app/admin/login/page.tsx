@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { signIn, getSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,20 +28,27 @@ export default function LoginPage() {
 
       console.log("Login result:", result); // Debug log
 
-      if (result?.error) {
+      // Handle the case where ok is true but error is 'undefined' (NextAuth quirk)
+      if (result?.ok && (!result.error || result.error === "undefined")) {
+        // Verify session was actually created
+        const session = await getSession();
+        if (session) {
+          router.push("/admin/dashboard");
+          router.refresh();
+        } else {
+          setError("Session creation failed. Please try again.");
+        }
+      } else if (result?.error) {
         // Handle different error types
         const errorMessage = 
-          result.error === "CredentialsSignin" 
+          result.error === "CredentialsSignin" || result.error === "undefined"
             ? "Invalid email or password" 
             : result.error === "Configuration"
             ? "Server configuration error. Please contact support."
-            : typeof result.error === "string"
+            : typeof result.error === "string" && result.error !== "undefined"
             ? result.error
             : "Invalid email or password";
         setError(errorMessage);
-      } else if (result?.ok) {
-        router.push("/admin/dashboard");
-        router.refresh();
       } else {
         setError("Unable to sign in. Please check your credentials and try again.");
       }
