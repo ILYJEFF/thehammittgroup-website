@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 const positions: Record<
   string,
@@ -186,9 +188,34 @@ export async function generateMetadata({
     return {};
   }
 
+  const cityKeywords = ["DFW", "Dallas-Fort Worth", "Austin", "Houston", "San Antonio"];
+  const keywords = [
+    `${position.name} jobs Texas`,
+    `${position.name} recruitment`,
+    `Texas ${position.name.toLowerCase()} jobs`,
+    ...cityKeywords.map(city => `${position.name} jobs ${city}`),
+    `manufacturing ${position.name.toLowerCase()} Texas`,
+    `${position.name} careers Texas`,
+  ];
+
   return {
-    title: `${position.name} Recruitment | The Hammitt Group`,
-    description: position.description,
+    title: `${position.name} Jobs in Texas | The Hammitt Group | DFW, Austin, Houston, San Antonio`,
+    description: `Find ${position.name.toLowerCase()} opportunities in Texas manufacturing. Expert placement services for ${position.name.toLowerCase()} roles across DFW, Austin, Houston, and San Antonio.`,
+    keywords: keywords.join(", "),
+    openGraph: {
+      title: `${position.name} Recruitment | The Hammitt Group`,
+      description: `Expert placement services for ${position.name.toLowerCase()} roles in Texas manufacturing.`,
+      type: "website",
+      url: `https://thehammittgroup.com/positions/${params.slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${position.name} Jobs | The Hammitt Group`,
+      description: `Find ${position.name.toLowerCase()} opportunities in Texas.`,
+    },
+    alternates: {
+      canonical: `https://thehammittgroup.com/positions/${params.slug}`,
+    },
   };
 }
 
@@ -199,73 +226,225 @@ export default function PositionPage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: position.name,
+    description: position.overview,
+    employmentType: "FULL_TIME",
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressRegion: "TX",
+        addressCountry: "US",
+      },
+    },
+    baseSalary: {
+      "@type": "MonetaryAmount",
+      currency: "USD",
+    },
+    industry: "Manufacturing",
+    qualifications: position.qualifications,
+  };
+
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://thehammittgroup.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Positions",
+        item: "https://thehammittgroup.com/positions",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: position.name,
+        item: `https://thehammittgroup.com/positions/${params.slug}`,
+      },
+    ],
+  };
+
   return (
-    <div className="py-16 lg:py-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <Link
-            href="/positions"
-            className="text-primary-600 hover:text-primary-700 mb-4 inline-block"
-          >
-            ← Back to Positions
-          </Link>
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
-            {position.name}
-          </h1>
-          <p className="text-xl text-gray-600">{position.description}</p>
-        </div>
+    <>
+      <Script
+        id={`position-structured-data-${params.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <Script
+        id={`position-breadcrumb-${params.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbStructuredData),
+        }}
+      />
+      <div className="py-16 lg:py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumb */}
+          <nav className="mb-8" aria-label="Breadcrumb">
+            <ol className="flex items-center space-x-2 text-sm text-gray-600">
+              <li>
+                <Link href="/" className="hover:text-primary-600">
+                  Home
+                </Link>
+              </li>
+              <li>/</li>
+              <li>
+                <Link href="/positions" className="hover:text-primary-600">
+                  Positions
+                </Link>
+              </li>
+              <li>/</li>
+              <li className="text-gray-900 font-medium">{position.name}</li>
+            </ol>
+          </nav>
 
-        <div className="prose prose-lg max-w-none mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Overview</h2>
-          <p className="text-gray-700 mb-8">{position.overview}</p>
+          {/* Header */}
+          <div className="mb-12">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6">
+              {position.name} Jobs in Texas
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed">
+              {position.description} Find opportunities across Dallas-Fort Worth, Austin, Houston, and San Antonio.
+            </p>
+          </div>
 
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Typical Qualifications
-          </h2>
-          <ul className="list-disc list-inside text-gray-700 mb-8 space-y-2">
-            {position.qualifications.map((qual) => (
-              <li key={qual}>{qual}</li>
-            ))}
-          </ul>
+          {/* Main Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+            <div className="lg:col-span-2 space-y-8">
+              <section>
+                <h2 className="text-3xl font-display font-bold text-gray-900 mb-6">
+                  Role Overview
+                </h2>
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    {position.overview}
+                  </p>
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    {position.name} roles are critical to manufacturing success in Texas. These positions require a combination of technical expertise, leadership skills, and industry knowledge. We work with top manufacturing companies across the state to place qualified professionals in these essential roles.
+                  </p>
+                </div>
+              </section>
 
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Common Industries
-          </h2>
-          <ul className="list-disc list-inside text-gray-700 mb-8 space-y-2">
-            {position.industries.map((industry) => (
-              <li key={industry}>{industry}</li>
-            ))}
-          </ul>
+              <section>
+                <h2 className="text-3xl font-display font-bold text-gray-900 mb-6">
+                  Typical Qualifications & Requirements
+                </h2>
+                <div className="grid grid-cols-1 gap-4">
+                  {position.qualifications.map((qual, index) => (
+                    <Card key={index} className="border-2 hover:border-primary-300 transition-colors">
+                      <CardContent className="p-4">
+                        <div className="flex items-start">
+                          <span className="w-2 h-2 bg-primary-600 rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                          <span className="text-gray-900 leading-relaxed">{qual}</span>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </section>
 
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            How We Help
-          </h2>
-          <p className="text-gray-700 mb-8">{position.howWeHelp}</p>
-        </div>
+              <section>
+                <h2 className="text-3xl font-display font-bold text-gray-900 mb-6">
+                  Common Industries for {position.name}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {position.industries.map((industry) => (
+                    <Card key={industry} className="border-2 hover:border-primary-300 transition-colors">
+                      <CardContent className="p-4">
+                        <div className="flex items-center">
+                          <span className="w-2 h-2 bg-primary-600 rounded-full mr-3"></span>
+                          <span className="text-gray-900 font-medium">{industry}</span>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </section>
 
-        <div className="bg-primary-50 rounded-lg p-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Interested in This Role?
-          </h3>
-          <p className="text-gray-700 mb-6">
-            Submit your resume and let us know you&apos;re interested in{" "}
-            {position.name} positions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/submit-resume">
-              <Button size="lg" variant="primary">
-                Submit Resume
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button size="lg" variant="outline">
-                Contact Us
-              </Button>
-            </Link>
+              <section>
+                <h2 className="text-3xl font-display font-bold text-gray-900 mb-6">
+                  How We Help Place {position.name}
+                </h2>
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    {position.howWeHelp}
+                  </p>
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    Our team understands the specific requirements and expectations for {position.name.toLowerCase()} roles in Texas manufacturing. We work closely with both candidates and employers to ensure the right match—considering not just technical qualifications, but also company culture, team dynamics, and long-term career goals.
+                  </p>
+                </div>
+              </section>
+            </div>
+
+            {/* Sidebar */}
+            <div className="space-y-6">
+              <Card className="bg-primary-50 border-primary-200">
+                <CardHeader>
+                  <CardTitle className="text-2xl text-gray-900">
+                    Interested in {position.name}?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-700">
+                    Submit your resume and let us know you&apos;re interested in {position.name.toLowerCase()} positions. We&apos;ll match you with opportunities that align with your skills and career goals.
+                  </p>
+                  <div className="flex flex-col gap-3">
+                    <Link href="/submit-resume">
+                      <Button size="lg" variant="primary" className="w-full">
+                        Submit Resume
+                      </Button>
+                    </Link>
+                    <Link href="/contact">
+                      <Button size="lg" variant="secondary" className="w-full">
+                        Contact Us
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">Locations</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-gray-700">
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-primary-600 rounded-full mr-3"></span>
+                      Dallas-Fort Worth
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-primary-600 rounded-full mr-3"></span>
+                      Austin
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-primary-600 rounded-full mr-3"></span>
+                      Houston
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-primary-600 rounded-full mr-3"></span>
+                      San Antonio
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
