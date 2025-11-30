@@ -55,7 +55,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div>
+    <div className="py-16 lg:py-24 bg-gray-50 min-h-screen">
       <Script
         id="contact-structured-data"
         type="application/ld+json"
@@ -70,7 +70,6 @@ export default function ContactPage() {
           __html: JSON.stringify(breadcrumbStructuredData),
         }}
       />
-      <div className="py-16 lg:py-24 bg-gray-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6">
@@ -191,6 +190,5 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
