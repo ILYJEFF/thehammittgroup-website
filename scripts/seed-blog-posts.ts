@@ -2485,68 +2485,201 @@ At The Hammitt Group, we help companies understand market compensation trends an
     excerpt: "Diversity and inclusion aren't just the right thing to do—they're essential for accessing the full talent pool and driving innovation.",
     content: `# Diversity and Inclusion in Manufacturing: Expanding Your Talent Pool
 
-Manufacturing has historically lacked diversity, but that's changing. Companies that embrace diversity and inclusion are accessing larger talent pools, driving innovation, and improving performance. Understanding how to build diverse, inclusive manufacturing teams is essential for companies that want to compete for talent and succeed in today's market.
+Manufacturing has historically lacked diversity, but that's changing. Companies that embrace diversity and inclusion are accessing larger talent pools, driving innovation, and improving performance. In today's competitive talent market, where skilled workers are in short supply, companies that limit themselves to traditional talent pools are at a significant disadvantage. Understanding how to build diverse, inclusive manufacturing teams is essential for companies that want to compete for talent and succeed in today's market.
 
 ## Why Diversity and Inclusion Matter
 
-**Access to Talent**: Diverse companies can access the full talent pool, not just a subset.
+Diversity and inclusion aren't just the right thing to do—they're business imperatives that drive real results.
 
-**Innovation**: Diverse teams bring different perspectives, leading to better problem-solving and innovation.
+### Access to the Full Talent Pool
 
-**Performance**: Research shows diverse teams perform better.
+When you limit your recruitment to traditional sources, you're competing for a smaller pool of candidates. Diverse companies can access the entire talent pool, dramatically expanding their options. In a market where skilled workers are scarce, this is a significant competitive advantage.
 
-**Customer Alignment**: Diverse teams better understand diverse customers.
+### Innovation and Problem-Solving
 
-**Competitive Advantage**: Companies with strong D&I programs attract top talent.
+Diverse teams bring different perspectives, experiences, and ways of thinking. This diversity of thought leads to:
+- Better problem-solving (different approaches to challenges)
+- More creative solutions
+- Better decision-making (considering multiple viewpoints)
+- Innovation (new ideas and approaches)
+
+Research consistently shows that diverse teams outperform homogeneous teams, especially on complex tasks that require creativity and innovation.
+
+### Better Performance
+
+Studies have found that companies with diverse workforces:
+- Are more profitable
+- Have better financial performance
+- Are more innovative
+- Make better decisions
+
+This isn't just correlation—diversity drives performance through better decision-making, innovation, and problem-solving.
+
+### Customer Alignment
+
+Your customers are diverse. Having a diverse workforce helps you:
+- Better understand diverse customer needs
+- Develop products and services that appeal to broader markets
+- Communicate more effectively with diverse customers
+- Build trust with diverse communities
+
+### Competitive Advantage in Recruitment
+
+Top talent increasingly values diversity and inclusion. Companies with strong D&I programs:
+- Attract more candidates
+- Appeal to younger workers who value diversity
+- Have better employer brands
+- Retain employees longer
 
 ## Current State of Manufacturing Diversity
 
-Manufacturing has traditionally been:
-- Male-dominated
-- Lacking racial and ethnic diversity
-- Limited age diversity (though this is changing with retirements)
+Manufacturing has traditionally been one of the least diverse industries:
 
-But this is changing as companies recognize the benefits of diversity.
+**Gender Diversity**: Manufacturing has been male-dominated, with women representing only about 30% of the manufacturing workforce, and even less in production roles.
+
+**Racial and Ethnic Diversity**: Manufacturing has lacked racial and ethnic diversity, though this varies by region and company.
+
+**Age Diversity**: Manufacturing has had limited age diversity, though this is changing as baby boomers retire and younger workers enter the field.
+
+**Geographic Diversity**: Manufacturing has been concentrated in certain regions, limiting geographic diversity.
+
+But this is changing. Forward-thinking manufacturers are recognizing that diversity is essential for accessing talent and driving performance.
 
 ## Building Diverse Teams
 
 ### 1. Expand Recruitment Sources
 
-Look beyond traditional sources:
-- Diverse professional organizations
+Look beyond traditional sources to find diverse candidates:
+
+**Diverse Professional Organizations**: Partner with organizations that serve diverse professionals:
+- Society of Women Engineers
+- National Society of Black Engineers
+- Society of Hispanic Professional Engineers
+- Professional associations for veterans, people with disabilities, etc.
+
+**Educational Institutions**: Work with:
 - Community colleges with diverse student bodies
-- Workforce development programs
-- Veteran organizations
+- Historically Black Colleges and Universities (HBCUs)
+- Hispanic-Serving Institutions (HSIs)
+- Technical schools serving diverse communities
+
+**Workforce Development Programs**: Partner with programs that serve:
+- Underrepresented communities
+- People re-entering the workforce
+- Career changers
 - Second-chance employment programs
+
+**Community Organizations**: Connect with:
+- Community centers
+- Religious organizations
+- Cultural organizations
+- Workforce development agencies
 
 ### 2. Remove Bias from Hiring
 
-- Use structured interviews
-- Focus on skills, not background
-- Diverse interview panels
-- Blind resume reviews (where possible)
-- Standardized assessment criteria
+Bias in hiring limits diversity. Take steps to reduce bias:
+
+**Structured Interviews**: Use consistent questions and evaluation criteria for all candidates.
+
+**Focus on Skills**: Evaluate candidates based on skills and qualifications, not background or appearance.
+
+**Diverse Interview Panels**: Include diverse interviewers to reduce individual bias.
+
+**Blind Resume Reviews**: Where possible, remove identifying information from resumes during initial screening.
+
+**Standardized Assessment Criteria**: Use objective criteria to evaluate all candidates consistently.
+
+**Training**: Train hiring managers on unconscious bias and inclusive hiring practices.
 
 ### 3. Create Inclusive Culture
 
-- Respectful work environment
-- Equal opportunity for advancement
-- Mentorship programs
-- Employee resource groups
-- Regular diversity training
+Diversity without inclusion doesn't work. Create an inclusive culture where everyone feels valued:
+
+**Respectful Work Environment**: Ensure all employees are treated with respect, regardless of background.
+
+**Equal Opportunity**: Ensure equal opportunity for advancement, training, and development.
+
+**Mentorship Programs**: Create mentorship programs that support diverse employees.
+
+**Employee Resource Groups**: Support employee resource groups (ERGs) for different communities.
+
+**Regular Diversity Training**: Provide ongoing training on diversity, inclusion, and unconscious bias.
+
+**Address Issues Promptly**: Take complaints seriously and address them quickly and fairly.
+
+**Celebrate Diversity**: Recognize and celebrate the contributions of diverse employees.
 
 ### 4. Support Career Development
 
-- Clear advancement paths for all
-- Training and development opportunities
-- Mentorship programs
-- Recognition of diverse contributions
+Ensure all employees have opportunities to advance:
+
+**Clear Advancement Paths**: Document career paths that are accessible to all.
+
+**Training and Development**: Provide training and development opportunities for all employees.
+
+**Mentorship**: Pair diverse employees with mentors who can support their development.
+
+**Recognition**: Recognize and reward the contributions of diverse employees.
+
+**Leadership Development**: Include diverse employees in leadership development programs.
+
+**Succession Planning**: Ensure diverse employees are considered for advancement opportunities.
+
+## Measuring Diversity and Inclusion
+
+Track these metrics:
+
+**Workforce Demographics**: Measure diversity across gender, race, ethnicity, age, etc.
+
+**Hiring Metrics**: Track diversity of new hires.
+
+**Advancement Metrics**: Measure diversity in promotions and leadership roles.
+
+**Retention**: Track retention rates by demographic group.
+
+**Employee Engagement**: Measure engagement across different groups.
+
+**Pay Equity**: Ensure pay equity across demographic groups.
+
+## Common Challenges
+
+### Resistance to Change
+
+Some employees may resist diversity initiatives. Address this through:
+- Clear communication about why diversity matters
+- Training on benefits of diversity
+- Leadership commitment and modeling
+
+### Finding Diverse Candidates
+
+It can be challenging to find diverse candidates. Solutions:
+- Expand recruitment sources
+- Build relationships with diverse communities
+- Work with specialized recruiters
+- Improve employer brand to attract diverse candidates
+
+### Creating Inclusive Culture
+
+Creating an inclusive culture takes time and effort:
+- Start with leadership commitment
+- Provide training
+- Address issues promptly
+- Measure and improve
 
 ## The Bottom Line
 
-Diversity and inclusion are essential for accessing the full talent pool and driving success. Companies that embrace D&I will have a competitive advantage in attracting talent and driving performance.
+Diversity and inclusion are essential for accessing the full talent pool and driving success. In a market where skilled workers are scarce, companies that limit themselves to traditional talent pools are at a significant disadvantage.
 
-At The Hammitt Group, we help companies build diverse, inclusive teams by connecting them with qualified candidates from all backgrounds.`,
+Companies that embrace diversity and inclusion:
+- Access larger talent pools
+- Drive innovation and performance
+- Better understand diverse customers
+- Attract top talent
+- Have competitive advantages
+
+Building diverse, inclusive teams isn't just the right thing to do—it's a business imperative. Companies that invest in diversity and inclusion will have significant advantages in attracting talent and driving performance.
+
+At The Hammitt Group, we help companies build diverse, inclusive teams by connecting them with qualified candidates from all backgrounds. We understand that diversity strengthens teams and drives performance, and we help companies access the full talent pool to find the skilled workers they need.`,
     categories: ["Industry Insights", "Recruitment Tips"],
     tags: ["Diversity", "Inclusion", "Recruitment", "Manufacturing Jobs"],
     seoTitle: "Diversity and Inclusion in Manufacturing | Expanding Talent Pool | The Hammitt Group",
@@ -2679,55 +2812,326 @@ At The Hammitt Group, we help companies compete for talent by highlighting what 
     excerpt: "Training programs are essential for developing skilled workers. Learn how to create effective manufacturing training programs.",
     content: `# Manufacturing Training Programs: Investing in Your Workforce
 
-Effective training programs are essential for developing skilled manufacturing workers. Whether onboarding new employees or upskilling existing ones, well-designed training programs improve productivity, quality, and retention. Learn how to create training programs that develop the skills your workforce needs.
+Effective training programs are essential for developing skilled manufacturing workers. Whether onboarding new employees or upskilling existing ones, well-designed training programs improve productivity, quality, and retention. In today's competitive manufacturing environment, where skilled workers are in short supply, investing in training isn't just nice to have—it's a strategic necessity.
+
+## Why Training Programs Matter
+
+Manufacturing companies face a critical challenge: the skills gap. The skills that workers have often don't match the skills that employers need. Training programs bridge this gap by developing workers with the exact skills your company requires.
+
+**Benefits of Effective Training**:
+- **Improved Productivity**: Well-trained workers are more productive and efficient
+- **Higher Quality**: Proper training reduces errors and improves quality
+- **Better Retention**: Employees who receive training are more likely to stay
+- **Reduced Costs**: Fewer mistakes mean less rework and waste
+- **Competitive Advantage**: Skilled workforce gives you an edge
+- **Succession Planning**: Training develops future leaders
 
 ## Types of Manufacturing Training
 
-**Onboarding**: Orientation for new employees covering safety, processes, and culture.
+### 1. Onboarding Training
 
-**Technical Skills**: Training on equipment, processes, and systems.
+Onboarding is the foundation of employee success. A comprehensive onboarding program should cover:
 
-**Safety Training**: Essential safety protocols and procedures.
+**Company Culture and Values**: Help new employees understand what makes your company special, your mission, and your values.
 
-**Quality Training**: Quality standards, inspection techniques, documentation.
+**Safety Protocols**: Safety training is non-negotiable in manufacturing. Cover:
+- Personal protective equipment (PPE) requirements
+- Emergency procedures
+- Hazard identification
+- Safety policies and procedures
+- Reporting requirements
 
-**Leadership Development**: Training for supervisors and managers.
+**Processes and Procedures**: Teach new employees how work is done:
+- Standard operating procedures (SOPs)
+- Quality standards
+- Documentation requirements
+- Communication protocols
 
-**Cross-Training**: Training employees in multiple areas for flexibility.
+**Equipment and Tools**: Familiarize employees with equipment they'll use:
+- Basic operation
+- Safety features
+- Maintenance requirements
+- Troubleshooting basics
 
-## Creating Effective Training
+**Team Integration**: Help new employees become part of the team:
+- Introduce team members
+- Explain team dynamics
+- Set expectations for collaboration
 
-**Assess Needs**: Identify skill gaps and training needs.
+### 2. Technical Skills Training
 
-**Set Objectives**: Define what employees should learn.
+Technical skills training develops the specific competencies workers need:
 
-**Develop Curriculum**: Create structured training materials.
+**Equipment Operation**: Training on specific machines and equipment your company uses.
 
-**Use Multiple Methods**: Classroom, hands-on, online, mentorship.
+**Process Understanding**: How manufacturing processes work and why they're done a certain way.
 
-**Assess Learning**: Test understanding and application.
+**Quality Standards**: What quality means in your company and how to achieve it.
 
-**Provide Feedback**: Regular feedback on progress.
+**Troubleshooting**: How to identify and solve common problems.
 
-**Continuous Improvement**: Update training based on feedback.
+**Technology Systems**: Training on software, data systems, and digital tools.
 
-## Best Practices
+### 3. Safety Training
 
-**Structured Programs**: Clear progression from basic to advanced.
+Safety training is ongoing, not just for new employees:
 
-**Hands-On Learning**: Practical, hands-on experience.
+**Regular Safety Meetings**: Weekly or monthly safety discussions.
 
-**Experienced Trainers**: Skilled trainers who can teach effectively.
+**Hazard-Specific Training**: Training for specific hazards in your facility.
 
-**Regular Updates**: Keep training current with technology and processes.
+**Emergency Response**: Regular drills and training for emergencies.
 
-**Support Learning**: Provide time and resources for training.
+**Safety Certifications**: OSHA training, first aid, and other certifications.
+
+**Behavioral Safety**: Training on safe work practices and habits.
+
+### 4. Quality Training
+
+Quality training ensures products meet standards:
+
+**Quality Standards**: What quality means and how it's measured.
+
+**Inspection Techniques**: How to inspect products and identify defects.
+
+**Documentation**: How to document quality data and findings.
+
+**Root Cause Analysis**: How to identify and address quality issues.
+
+**Continuous Improvement**: How to contribute to quality improvement.
+
+### 5. Leadership Development
+
+Developing leaders from within is essential:
+
+**Supervisory Skills**: Training for new supervisors on:
+- Team management
+- Communication
+- Conflict resolution
+- Performance management
+- Safety leadership
+
+**Management Development**: Advanced training for managers:
+- Strategic thinking
+- Budget management
+- Process improvement
+- Change management
+
+**Mentorship Programs**: Pair developing leaders with experienced mentors.
+
+### 6. Cross-Training
+
+Cross-training provides flexibility and career development:
+
+**Multiple Skills**: Train employees in multiple areas or processes.
+
+**Flexibility**: Cross-trained employees can fill in where needed.
+
+**Career Development**: Exposure to different areas helps employees find their interests.
+
+**Succession Planning**: Cross-training prepares employees for advancement.
+
+## Creating Effective Training Programs
+
+### 1. Assess Training Needs
+
+Start by understanding what training is needed:
+
+**Skill Gap Analysis**: Compare current skills to required skills.
+
+**Performance Reviews**: Identify areas where performance could improve.
+
+**Employee Feedback**: Ask employees what training they need.
+
+**Industry Changes**: Consider how technology and processes are evolving.
+
+**Regulatory Requirements**: Ensure training meets regulatory requirements.
+
+### 2. Set Clear Objectives
+
+Define what employees should learn:
+
+**Learning Outcomes**: Specific, measurable outcomes.
+
+**Performance Standards**: What good performance looks like.
+
+**Assessment Criteria**: How you'll measure learning.
+
+**Timeline**: When training should be completed.
+
+### 3. Develop Curriculum
+
+Create structured training materials:
+
+**Content**: What needs to be covered.
+
+**Sequence**: Logical order for learning.
+
+**Materials**: Training manuals, videos, presentations, hands-on exercises.
+
+**Resources**: Tools, equipment, and facilities needed.
+
+### 4. Use Multiple Training Methods
+
+Different people learn differently. Use a variety of methods:
+
+**Classroom Training**: Traditional instruction for theory and concepts.
+
+**Hands-On Training**: Practical, hands-on experience with equipment and processes.
+
+**Online Learning**: E-learning modules for flexibility and consistency.
+
+**Mentorship**: Pair learners with experienced workers.
+
+**Simulations**: Practice in safe, controlled environments.
+
+**On-the-Job Training**: Learning while doing actual work.
+
+### 5. Assess Learning
+
+Ensure employees are learning:
+
+**Knowledge Tests**: Written or oral tests of understanding.
+
+**Practical Assessments**: Hands-on demonstrations of skills.
+
+**Performance Observations**: Watch employees perform tasks.
+
+**Feedback Sessions**: Discuss progress and areas for improvement.
+
+### 6. Provide Feedback
+
+Regular feedback helps employees learn:
+
+**Immediate Feedback**: Correct mistakes as they happen.
+
+**Progress Reviews**: Regular check-ins on learning progress.
+
+**Constructive Criticism**: Helpful feedback on areas to improve.
+
+**Recognition**: Acknowledge progress and achievements.
+
+### 7. Continuous Improvement
+
+Training programs should evolve:
+
+**Gather Feedback**: Ask trainees and trainers for feedback.
+
+**Measure Results**: Track how training affects performance.
+
+**Update Content**: Keep training current with changes in technology and processes.
+
+**Refine Methods**: Improve training methods based on what works.
+
+## Best Practices for Manufacturing Training
+
+### Structured Progression
+
+Create clear learning paths:
+- Start with basics
+- Progress to intermediate skills
+- Advance to advanced competencies
+- Provide clear milestones
+
+### Hands-On Focus
+
+Manufacturing is hands-on work. Training should be too:
+- Minimize lecture time
+- Maximize hands-on practice
+- Use real equipment when possible
+- Provide safe practice environments
+
+### Experienced Trainers
+
+Choose trainers carefully:
+- Select skilled, experienced workers
+- Provide trainer training
+- Recognize trainer contributions
+- Support trainers with resources
+
+### Regular Updates
+
+Keep training current:
+- Review training annually
+- Update for technology changes
+- Incorporate process improvements
+- Reflect regulatory changes
+
+### Support Learning
+
+Make it easy for employees to learn:
+- Provide time for training during work hours
+- Remove barriers to learning
+- Create positive learning environment
+- Recognize learning achievements
+
+## Measuring Training Effectiveness
+
+Track these metrics:
+
+**Completion Rates**: Percentage of employees who complete training.
+
+**Time to Competency**: How long it takes employees to become fully productive.
+
+**Performance Improvement**: How training affects job performance.
+
+**Quality Metrics**: Impact on quality (defect rates, rework, etc.).
+
+**Retention**: Whether training improves retention.
+
+**Cost per Trainee**: Total training costs divided by number of trainees.
+
+**ROI**: Return on investment from training programs.
+
+## Common Training Challenges
+
+### Time Constraints
+
+**Challenge**: Finding time for training when production demands are high.
+
+**Solution**: Schedule training during slower periods, provide coverage, make training a priority.
+
+### Cost Concerns
+
+**Challenge**: Training costs money (time, materials, trainers).
+
+**Solution**: View training as investment, not cost. Calculate ROI. Consider cost of not training (errors, turnover, etc.).
+
+### Keeping Current
+
+**Challenge**: Technology and processes change rapidly.
+
+**Solution**: Regular training reviews, continuous updates, flexible curriculum.
+
+### Employee Engagement
+
+**Challenge**: Getting employees engaged in training.
+
+**Solution**: Make training relevant, interactive, and valuable. Show how it helps their career.
+
+## The ROI of Training
+
+While training requires investment, the return is significant:
+
+**Productivity Gains**: Trained workers are more productive.
+
+**Quality Improvements**: Better training means fewer errors and higher quality.
+
+**Reduced Turnover**: Training improves retention, reducing recruitment costs.
+
+**Lower Error Costs**: Fewer mistakes mean less rework and waste.
+
+**Competitive Advantage**: Skilled workforce gives you an edge.
+
+**Innovation**: Trained workers contribute more to process improvement.
 
 ## The Bottom Line
 
-Effective training programs are investments that pay off through improved productivity, quality, and retention. Companies that invest in training develop the skilled workforce they need.
+Effective training programs are investments that pay off through improved productivity, quality, and retention. Companies that invest in training develop the skilled workforce they need to compete and succeed.
 
-At The Hammitt Group, we help companies identify training needs and develop effective training programs. We also help job seekers find companies that invest in employee development.`,
+Training isn't a one-time event—it's an ongoing process. As manufacturing evolves, training must evolve with it. Companies that commit to continuous training and development will have the skilled workforce they need to thrive in today's competitive manufacturing environment.
+
+At The Hammitt Group, we help companies identify training needs and develop effective training programs. We understand that developing talent internally is often more effective than constantly recruiting, and we help companies build the training programs that develop the skilled workers they need. We also help job seekers find companies that invest in employee development and offer opportunities to learn and grow.`,
     categories: ["Industry Insights", "Career Advice"],
     tags: ["Training", "Skills Development", "Manufacturing Education", "Workforce Development"],
     seoTitle: "Manufacturing Training Programs | Workforce Development | The Hammitt Group",
@@ -3375,8 +3779,35 @@ async function seedBlogPosts() {
         where: { slug: slugify(postData.title) },
       });
 
+      // Update existing posts with improved content
       if (existingPost) {
-        console.log(`Skipping existing post: ${postData.title}`);
+        const publishDate = getDateForWeek(postData.week);
+        const categoryIds = postData.categories.map(cat => categoryMap.get(cat)!).filter(Boolean);
+        const tagIds = postData.tags.map(tag => tagMap.get(tag)!).filter(Boolean);
+
+        await prisma.blogPost.update({
+          where: { id: existingPost.id },
+          data: {
+            title: postData.title,
+            slug: slugify(postData.title),
+            excerpt: postData.excerpt,
+            content: postData.content,
+            publishedAt: publishDate,
+            seoTitle: postData.seoTitle,
+            seoDescription: postData.seoDescription,
+            seoKeywords: postData.seoKeywords,
+            categories: {
+              set: [],
+              connect: categoryIds.map(id => ({ id })),
+            },
+            tags: {
+              set: [],
+              connect: tagIds.map(id => ({ id })),
+            },
+          },
+        });
+
+        console.log(`Updated: ${postData.title} (Week ${postData.week}, ${publishDate.toISOString().split('T')[0]})`);
         skipped++;
         continue;
       }
