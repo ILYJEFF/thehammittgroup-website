@@ -275,7 +275,7 @@ export default function HomePage() {
               Why Choose The Hammitt Group
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Texas's premier manufacturing recruitment agency. We combine deep industry expertise with personalized service to deliver exceptional results for both employers and candidates.
+              Texas&apos;s premier manufacturing recruitment agency. We combine deep industry expertise with personalized service to deliver exceptional results for both employers and candidates.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
