@@ -13,7 +13,7 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
-          return null;
+          throw new Error("Email and password are required");
         }
 
         try {
@@ -22,7 +22,7 @@ export const authOptions: NextAuthOptions = {
           });
 
           if (!admin) {
-            return null;
+            throw new Error("Invalid email or password");
           }
 
           const isPasswordValid = await bcrypt.compare(
@@ -31,26 +31,30 @@ export const authOptions: NextAuthOptions = {
           );
 
           if (!isPasswordValid) {
-            return null;
+            throw new Error("Invalid email or password");
           }
 
           return {
             id: admin.id,
             email: admin.email,
           };
-        } catch (error) {
+        } catch (error: any) {
           console.error("Database error during authentication:", error);
-          return null;
+          // Re-throw to show proper error message
+          throw new Error(error.message || "Authentication failed");
         }
       },
     }),
   ],
   session: {
     strategy: "jwt",
+    maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   pages: {
     signIn: "/admin/login",
+    error: "/admin/login",
   },
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
@@ -67,5 +71,6 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
+  debug: process.env.NODE_ENV === "development",
 };
 

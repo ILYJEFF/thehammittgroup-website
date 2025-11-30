@@ -27,13 +27,16 @@ export default function LoginPage() {
       });
 
       if (result?.error) {
-        setError("Invalid email or password");
-      } else {
+        setError(result.error === "CredentialsSignin" ? "Invalid email or password" : result.error);
+      } else if (result?.ok) {
         router.push("/admin/dashboard");
         router.refresh();
+      } else {
+        setError("An error occurred. Please try again.");
       }
-    } catch (error) {
-      setError("An error occurred. Please try again.");
+    } catch (error: any) {
+      console.error("Login error:", error);
+      setError(error?.message || "An error occurred. Please try again.");
     } finally {
       setIsLoading(false);
     }
