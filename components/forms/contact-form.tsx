@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select } from "@/components/ui/select";
 import { LoadingSpinner } from "@/components/ui/loading";
+import { trackConversion } from "@/components/analytics/google-analytics";
 
 const contactSchema = z.object({
   companyName: z.string().optional(),

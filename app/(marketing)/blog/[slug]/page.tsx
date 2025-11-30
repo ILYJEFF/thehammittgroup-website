@@ -115,7 +115,7 @@ export default async function BlogPostPage({
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <article className="lg:col-span-2 bg-white rounded-lg shadow-sm p-8 md:p-12">
-          <header className="mb-8 pb-8 border-b border-gray-200">
+            <header className="mb-8 pb-8 border-b border-gray-200">
             <div className="flex gap-2 mb-4 flex-wrap">
               {post.categories.map((cat) => (
                 <Link
@@ -212,7 +212,7 @@ export default async function BlogPostPage({
               </div>
             </div>
           </div>
-        </article>
+          </article>
 
         {/* Sidebar */}
         <aside className="lg:col-span-1 space-y-6">
@@ -226,6 +226,7 @@ export default async function BlogPostPage({
             <RecentPostsSidebar />
           </Suspense>
         </aside>
+        </div>
       </div>
     </div>
   );
