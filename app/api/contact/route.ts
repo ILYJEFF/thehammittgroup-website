@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { z } from "zod";
+import { sendContactNotification } from "@/lib/email";
 
 const contactSchema = z.object({
   companyName: z.string().optional(),
@@ -20,6 +21,14 @@ export async function POST(request: NextRequest) {
     const contact = await prisma.contact.create({
       data: validatedData,
     });
+
+    // Send email notification (don't fail if email fails)
+    try {
+      await sendContactNotification(validatedData);
+    } catch (emailError) {
+      console.error("Failed to send email notification:", emailError);
+      // Continue even if email fails - submission is still saved
+    }
 
     return NextResponse.json(
       { success: true, id: contact.id },

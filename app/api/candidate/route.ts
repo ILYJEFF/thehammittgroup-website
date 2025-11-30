@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
 import { existsSync } from "fs";
+import { sendCandidateNotification } from "@/lib/email";
 
 export async function POST(request: NextRequest) {
   try {
@@ -78,6 +79,25 @@ export async function POST(request: NextRequest) {
         status: "new",
       },
     });
+
+    // Send email notification (don't fail if email fails)
+    try {
+      await sendCandidateNotification({
+        firstName,
+        lastName,
+        email,
+        phone,
+        currentLocation,
+        desiredLocation: desiredLocation as "DFW" | "Austin" | "Houston" | "San Antonio",
+        industry,
+        positionType,
+        coverLetter: coverLetter || undefined,
+        resumeUrl,
+      });
+    } catch (emailError) {
+      console.error("Failed to send email notification:", emailError);
+      // Continue even if email fails - submission is still saved
+    }
 
     return NextResponse.json(
       { success: true, id: candidate.id },
