@@ -10,6 +10,9 @@ import { Button } from "@/components/ui/button";
 import { CardSkeleton } from "@/components/ui/loading";
 import { Suspense } from "react";
 import Image from "next/image";
+import { RelatedPosts } from "@/components/blog/related-posts";
+import { SocialShare } from "@/components/blog/social-share";
+import { ReadingTime } from "@/components/blog/reading-time";
 
 async function getPost(slug: string) {
   try {
@@ -28,6 +31,32 @@ async function getPost(slug: string) {
   } catch (error) {
     console.error("Error fetching blog post:", error);
     return null;
+  }
+}
+
+async function getAllPosts() {
+  try {
+    return await prisma.blogPost.findMany({
+      where: { published: true },
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        excerpt: true,
+        publishedAt: true,
+        featuredImage: true,
+        categories: {
+          select: {
+            name: true,
+          },
+        },
+      },
+      orderBy: { publishedAt: "desc" },
+      take: 10,
+    });
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return [];
   }
 }
 
@@ -62,55 +91,69 @@ export default async function BlogPostPage({
   params: { slug: string };
 }) {
   const post = await getPost(params.slug);
+  const allPosts = await getAllPosts();
 
   if (!post) {
     notFound();
   }
 
+  const currentUrl = `https://www.thehammittgroup.com/blog/${post.slug}`;
+
   return (
-    <div className="py-16 lg:py-24">
+    <div className="py-16 lg:py-24 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/blog"
-          className="text-primary-600 hover:text-primary-700 mb-8 inline-block transition-colors"
+          className="text-primary-600 hover:text-primary-700 mb-8 inline-flex items-center gap-2 transition-colors font-medium"
         >
-          ← Back to Blog
+          <span>←</span>
+          <span>Back to Blog</span>
         </Link>
 
-        <article>
-          <header className="mb-8">
+        <article className="bg-white rounded-lg shadow-sm p-8 md:p-12">
+          <header className="mb-8 pb-8 border-b border-gray-200">
             <div className="flex gap-2 mb-4 flex-wrap">
               {post.categories.map((cat) => (
-                <span
+                <Link
                   key={cat.id}
-                  className="px-3 py-1 bg-primary-100 text-primary-800 text-sm rounded"
+                  href={`/blog?category=${cat.slug}`}
+                  className="px-3 py-1.5 bg-primary-100 text-primary-800 text-sm font-medium rounded-full hover:bg-primary-200 transition-colors"
                 >
                   {cat.name}
-                </span>
+                </Link>
               ))}
             </div>
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4 leading-tight">
               {post.title}
             </h1>
             {post.excerpt && (
-              <p className="text-xl text-gray-600 mb-4">{post.excerpt}</p>
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">{post.excerpt}</p>
             )}
-            <div className="flex items-center gap-4 text-sm text-gray-500">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
               <span>
                 {post.publishedAt && formatDate(post.publishedAt)}
               </span>
               <span>•</span>
+              <ReadingTime content={post.content} />
+              <span>•</span>
               <span>By {post.author.email}</span>
+            </div>
+            <div className="mt-6">
+              <SocialShare 
+                title={post.title}
+                url={currentUrl}
+              />
             </div>
           </header>
 
           {post.featuredImage && (
-            <div className="mb-8 rounded-lg overflow-hidden relative aspect-video">
+            <div className="mb-10 rounded-xl overflow-hidden relative aspect-video shadow-lg">
               <Image
                 src={post.featuredImage}
                 alt={post.title}
                 fill
                 className="object-cover"
+                priority
               />
             </div>
           )}
@@ -124,37 +167,41 @@ export default async function BlogPostPage({
           </div>
 
           {post.tags.length > 0 && (
-            <div className="mt-8 pt-8 border-t border-gray-200">
+            <div className="mt-12 pt-8 border-t border-gray-200">
+              <h3 className="text-sm font-semibold text-gray-700 mb-4">Tags</h3>
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
-                  <span
+                  <Link
                     key={tag.id}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded"
+                    href={`/blog?search=${encodeURIComponent(tag.name)}`}
+                    className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-gray-200 transition-colors"
                   >
                     #{tag.name}
-                  </span>
+                  </Link>
                 ))}
               </div>
             </div>
           )}
 
+          <RelatedPosts posts={allPosts} currentPostId={post.id} />
+
           <div className="mt-12 pt-8 border-t border-gray-200">
-            <div className="bg-primary-50 rounded-lg p-8 text-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl p-8 md:p-12 text-center">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                 Ready to Connect?
               </h3>
-              <p className="text-gray-700 mb-6">
-                Whether you&apos;re looking for top talent or your next career
-                opportunity, we&apos;re here to help.
+              <p className="text-gray-700 mb-8 text-lg max-w-2xl mx-auto">
+                Whether you&apos;re looking for top manufacturing talent or your next career
+                opportunity in Texas, we&apos;re here to help.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">
-                  <Button size="lg" variant="primary">
+                  <Button size="lg" variant="primary" className="min-w-[160px]">
                     For Employers
                   </Button>
                 </Link>
                 <Link href="/submit-resume">
-                  <Button size="lg" variant="secondary">
+                  <Button size="lg" variant="secondary" className="min-w-[160px]">
                     For Candidates
                   </Button>
                 </Link>
