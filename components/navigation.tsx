@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -13,9 +14,14 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0">
-              <span className="text-2xl font-display font-bold text-primary-900">
-                The Hammitt Group
-              </span>
+              <Image
+                src="/uploads/asset/TheHammittGroupLogo.png"
+                alt="The Hammitt Group"
+                width={180}
+                height={50}
+                className="h-10 w-auto"
+                priority
+              />
             </Link>
           </div>
 
