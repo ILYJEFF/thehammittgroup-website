@@ -38,7 +38,7 @@ export default async function SubmissionsPage({
 }: {
   searchParams: { location?: string; industry?: string; status?: string };
 }) {
-  let candidates;
+  let candidates: Awaited<ReturnType<typeof getCandidates>>;
   try {
     candidates = await getCandidates(searchParams);
   } catch (error) {

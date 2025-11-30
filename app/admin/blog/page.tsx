@@ -5,18 +5,23 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 async function getPosts() {
-  return await prisma.blogPost.findMany({
-    include: {
-      author: {
-        select: {
-          email: true,
+  try {
+    return await prisma.blogPost.findMany({
+      include: {
+        author: {
+          select: {
+            email: true,
+          },
         },
+        categories: true,
+        tags: true,
       },
-      categories: true,
-      tags: true,
-    },
-    orderBy: { createdAt: "desc" },
-  });
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    console.error("Error fetching blog posts:", error);
+    return [];
+  }
 }
 
 export default async function BlogPage() {

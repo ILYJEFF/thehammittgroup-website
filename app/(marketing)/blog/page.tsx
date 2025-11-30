@@ -4,6 +4,7 @@ import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 import { CardSkeleton } from "@/components/ui/loading";
 import { Suspense } from "react";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -57,11 +58,12 @@ async function BlogPosts() {
         <Link key={post.id} href={`/blog/${post.slug}`}>
           <Card className="h-full hover:shadow-lg transition-all duration-200 cursor-pointer group">
             {post.featuredImage && (
-              <div className="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
-                <img
+              <div className="aspect-video bg-gray-200 rounded-t-lg overflow-hidden relative">
+                <Image
                   src={post.featuredImage}
                   alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-200"
                 />
               </div>
             )}

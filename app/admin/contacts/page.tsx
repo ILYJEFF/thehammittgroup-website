@@ -28,7 +28,7 @@ export default async function ContactsPage({
 }: {
   searchParams: { city?: string; industry?: string };
 }) {
-  let contacts;
+  let contacts: Awaited<ReturnType<typeof getContacts>>;
   try {
     contacts = await getContacts(searchParams);
   } catch (error) {

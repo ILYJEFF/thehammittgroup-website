@@ -39,10 +39,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   // Blog posts
-  const posts = await prisma.blogPost.findMany({
-    where: { published: true },
-    select: { slug: true, updatedAt: true },
-  });
+  let posts: Array<{ slug: string; updatedAt: Date }> = [];
+  try {
+    posts = await prisma.blogPost.findMany({
+      where: { published: true },
+      select: { slug: true, updatedAt: true },
+    });
+  } catch (error) {
+    console.error("Error fetching blog posts for sitemap:", error);
+    // Continue without blog posts if database is unavailable
+  }
 
   const sitemapEntries: MetadataRoute.Sitemap = [
     ...staticPages.map((path) => ({

@@ -23,7 +23,10 @@ const candidateSchema = z.object({
   industry: z.string().min(2, "Industry is required"),
   positionType: z.string().min(2, "Position type is required"),
   coverLetter: z.string().optional(),
-  resume: z.instanceof(FileList).refine((files) => files.length > 0, "Resume is required"),
+  resume: z.any().refine((files) => {
+    if (typeof window === "undefined") return true; // Skip validation during SSR
+    return files && files.length > 0;
+  }, "Resume is required"),
 });
 
 type CandidateFormData = z.infer<typeof candidateSchema>;
@@ -56,7 +59,10 @@ export function CandidateForm() {
       if (data.coverLetter) {
         formData.append("coverLetter", data.coverLetter);
       }
-      formData.append("resume", data.resume[0]);
+      const resumeFile = Array.isArray(data.resume) ? data.resume[0] : (data.resume as FileList)[0];
+      if (resumeFile) {
+        formData.append("resume", resumeFile);
+      }
 
       const response = await fetch("/api/candidate", {
         method: "POST",
@@ -219,7 +225,9 @@ export function CandidateForm() {
           Accepted formats: PDF, DOC, DOCX (Max 10MB)
         </p>
         {errors.resume && (
-          <p className="mt-1 text-sm text-red-600">{errors.resume.message}</p>
+          <p className="mt-1 text-sm text-red-600">
+            {typeof errors.resume.message === "string" ? errors.resume.message : "Resume is required"}
+          </p>
         )}
       </div>
 

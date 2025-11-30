@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CardSkeleton } from "@/components/ui/loading";
 import { Suspense } from "react";
+import Image from "next/image";
 
 async function getPost(slug: string) {
   try {
@@ -104,11 +105,12 @@ export default async function BlogPostPage({
           </header>
 
           {post.featuredImage && (
-            <div className="mb-8 rounded-lg overflow-hidden">
-              <img
+            <div className="mb-8 rounded-lg overflow-hidden relative aspect-video">
+              <Image
                 src={post.featuredImage}
                 alt={post.title}
-                className="w-full h-auto"
+                fill
+                className="object-cover"
               />
             </div>
           )}
