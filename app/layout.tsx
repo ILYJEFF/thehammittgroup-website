@@ -31,8 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="font-sans antialiased">
+      <head>
         <GoogleAnalytics />
+      </head>
+      <body className="font-sans antialiased">
         <Providers>{children}</Providers>
         <Toaster />
       </body>
