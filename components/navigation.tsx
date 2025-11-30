@@ -14,7 +14,7 @@ export function Navigation() {
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0">
               <img
-                src="/uploads/asset/TheHammittGroupLogo.png"
+                src="/logo.png"
                 alt="The Hammitt Group"
                 className="h-10 w-auto"
               />

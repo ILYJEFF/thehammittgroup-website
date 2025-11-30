@@ -8,7 +8,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="mb-4">
               <img
-                src="/uploads/asset/TheHammittGroupLogo.png"
+                src="/logo.png"
                 alt="The Hammitt Group"
                 className="h-12 w-auto brightness-0 invert"
               />
