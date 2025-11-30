@@ -13,7 +13,8 @@
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
     "create-admin": "tsx scripts/create-admin.ts",
-    "create-admin:auto": "tsx scripts/create-admin-non-interactive.ts"
+    "create-admin:auto": "tsx scripts/create-admin-non-interactive.ts",
+    "seed-blog": "tsx scripts/seed-blog-posts.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
