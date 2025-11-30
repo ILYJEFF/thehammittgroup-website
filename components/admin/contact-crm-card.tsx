@@ -237,16 +237,14 @@ export function ContactCrmCard({ contact }: ContactCrmCardProps) {
             Archive
           </Button>
         )}
-        {status !== "converted" && (
-          <Button
-            size="sm"
-            variant="primary"
-            onClick={() => handleStatusChange("converted")}
-            disabled={isLoading}
-          >
-            Convert to Lead
-          </Button>
-        )}
+        <Button
+          size="sm"
+          variant="primary"
+          onClick={() => handleStatusChange("converted")}
+          disabled={isLoading}
+        >
+          Convert to Lead
+        </Button>
         {!showDeleteConfirm ? (
           <Button
             size="sm"

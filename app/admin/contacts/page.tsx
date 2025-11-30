@@ -9,7 +9,7 @@ async function getContacts(searchParams: {
   status?: string;
 }) {
   const where: any = {
-    status: { not: "deleted" }, // Exclude deleted contacts
+    status: { notIn: ["deleted", "converted"] }, // Only show unconverted contacts
   };
 
   if (searchParams.city) {
@@ -21,7 +21,10 @@ async function getContacts(searchParams: {
   }
 
   if (searchParams.status && searchParams.status !== "all") {
-    where.status = searchParams.status;
+    // Only allow new and archived statuses
+    if (searchParams.status === "new" || searchParams.status === "archived") {
+      where.status = searchParams.status;
+    }
   }
 
   return await prisma.contact.findMany({
@@ -48,9 +51,9 @@ export default async function ContactsPage({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">CRM - Contact Management</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Contact Submissions</h1>
             <p className="text-gray-600 mt-2">
-              Manage leads, convert contacts, and track your pipeline
+              Manage incoming contact submissions. Convert to leads to move them to CRM.
             </p>
           </div>
           {contacts.length > 0 && <ContactsExportButton contacts={contacts} />}

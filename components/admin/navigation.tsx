@@ -11,7 +11,8 @@ export function AdminNavigation() {
 
   const navItems = [
     { href: "/admin/dashboard", label: "Dashboard" },
-    { href: "/admin/contacts", label: "CRM" },
+    { href: "/admin/contacts", label: "Contacts" },
+    { href: "/admin/crm", label: "CRM" },
     { href: "/admin/submissions", label: "Submissions" },
     { href: "/admin/blog", label: "Blog" },
   ];

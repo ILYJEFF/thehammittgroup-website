@@ -51,7 +51,6 @@ export function ContactsCrm({ contacts: initialContacts }: ContactsCrmProps) {
     all: initialContacts.length,
     new: initialContacts.filter((c) => c.status === "new").length,
     archived: initialContacts.filter((c) => c.status === "archived").length,
-    converted: initialContacts.filter((c) => c.status === "converted").length,
   };
 
   const handleFilterChange = (key: string, value: string) => {
@@ -86,7 +85,6 @@ export function ContactsCrm({ contacts: initialContacts }: ContactsCrmProps) {
                 <option value="all">All Statuses ({statusCounts.all})</option>
                 <option value="new">New ({statusCounts.new})</option>
                 <option value="archived">Archived ({statusCounts.archived})</option>
-                <option value="converted">Converted ({statusCounts.converted})</option>
               </Select>
             </div>
             <div>
