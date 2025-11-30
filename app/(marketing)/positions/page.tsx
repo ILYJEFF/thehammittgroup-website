@@ -121,16 +121,18 @@ export default function PositionsPage() {
                 className="group"
                 aria-label={`Learn more about ${position.name} opportunities`}
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary-400 bg-white">
-                  <CardHeader>
-                    <CardTitle className="text-xl md:text-2xl group-hover:text-primary-600 transition-colors text-gray-900">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary-600 hover:border-l-primary-700 bg-white relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-primary-50 rounded-full -mr-12 -mt-12 opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                  <CardHeader className="relative">
+                    <div className="w-12 h-1 bg-primary-600 mb-4 rounded-full"></div>
+                    <CardTitle className="text-xl md:text-2xl group-hover:text-primary-600 transition-colors text-gray-900 font-bold">
                       {position.name}
                     </CardTitle>
-                    <CardDescription className="text-gray-700 text-base mt-2">
+                    <CardDescription className="text-gray-700 text-base mt-3 leading-relaxed">
                       {position.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="relative">
                     <span className="text-primary-600 font-semibold group-hover:underline inline-flex items-center">
                       Explore {position.name.toLowerCase()} opportunities
                       <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

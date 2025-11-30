@@ -134,37 +134,31 @@ const benefits = [
     title: "Deep Industry Expertise",
     description:
       "Years of specialized experience in Texas manufacturing sectors. We understand the unique talent needs, regulatory requirements, and operational challenges of automotive, aerospace, food & beverage, oil & gas, electronics, and industrial manufacturing.",
-    icon: "🏭",
   },
   {
     title: "Proven Track Record",
     description:
       "Successful placements across all manufacturing industries in DFW, Austin, Houston, and San Antonio. We've helped hundreds of companies find the right talent and thousands of professionals advance their careers.",
-    icon: "📈",
   },
   {
     title: "Boutique, Personalized Service",
     description:
       "Unlike large recruiting firms, we take a personalized approach to every placement. We get to know both our clients and candidates, ensuring the right cultural and technical fit for long-term success.",
-    icon: "🤝",
   },
   {
     title: "Texas Market Knowledge",
     description:
       "Deep connections across Texas manufacturing hubs. We understand local market dynamics, salary ranges, and the unique characteristics of each region's manufacturing landscape.",
-    icon: "🗺️",
   },
   {
     title: "Comprehensive Role Coverage",
     description:
       "From entry-level production workers to C-suite executives, we place talent across all manufacturing roles including plant managers, engineers, supervisors, quality control, maintenance, and supply chain professionals.",
-    icon: "👥",
   },
   {
     title: "Fast, Responsive Service",
     description:
       "We understand that manufacturing operations can't wait. Our streamlined process ensures quick response times and efficient placement, minimizing downtime and maximizing productivity.",
-    icon: "⚡",
   },
 ];
 
@@ -246,22 +240,40 @@ export default function HomePage() {
                 Recruitment Specialists
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-primary-100 max-w-3xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-primary-100 max-w-3xl mx-auto mb-6">
               Connecting top manufacturing talent with leading companies across
               Texas. Specialized recruitment for DFW, Austin, Houston, and San
               Antonio.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link href="/contact">
-                <Button size="lg" variant="primary" className="bg-white text-primary-900 hover:bg-gray-100">
+                <Button size="lg" variant="primary" className="bg-white text-primary-900 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-shadow">
                   Find Talent
                 </Button>
               </Link>
               <Link href="/submit-resume">
-                <Button size="lg" variant="secondary">
+                <Button size="lg" variant="secondary" className="shadow-lg hover:shadow-xl transition-shadow">
                   Submit Resume
                 </Button>
               </Link>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto pt-8 border-t border-white/20">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold mb-1">500+</div>
+                <div className="text-sm text-primary-200">Placements</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold mb-1">8</div>
+                <div className="text-sm text-primary-200">Industries</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold mb-1">4</div>
+                <div className="text-sm text-primary-200">Texas Cities</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold mb-1">15+</div>
+                <div className="text-sm text-primary-200">Years Experience</div>
+              </div>
             </div>
           </div>
         </div>
@@ -282,11 +294,12 @@ export default function HomePage() {
             {benefits.map((benefit, index) => (
               <Card
                 key={index}
-                className="text-left hover:shadow-xl transition-all duration-300 border-2 hover:border-primary-300 hover:-translate-y-1 bg-white"
+                className="text-left hover:shadow-xl transition-all duration-300 border-l-4 border-l-primary-600 hover:border-l-primary-700 hover:-translate-y-1 bg-white relative overflow-hidden"
               >
-                <CardHeader>
-                  <div className="text-4xl mb-4">{benefit.icon}</div>
-                  <CardTitle className="text-xl md:text-2xl mb-3 text-gray-900">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
+                <CardHeader className="relative">
+                  <div className="w-12 h-1 bg-primary-600 mb-4 rounded-full"></div>
+                  <CardTitle className="text-xl md:text-2xl mb-3 text-gray-900 font-bold">
                     {benefit.title}
                   </CardTitle>
                   <CardDescription className="text-base text-gray-700 leading-relaxed">
@@ -399,6 +412,58 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Process Section */}
+      <section className="py-16 lg:py-24 bg-gray-50" id="process">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-4">
+              Our Recruitment Process
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+              A streamlined approach that delivers results quickly and efficiently
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                1
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Consultation</h3>
+              <p className="text-gray-600">
+                We start by understanding your specific needs, company culture, and requirements
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                2
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Talent Search</h3>
+              <p className="text-gray-600">
+                Our network and expertise help us identify the best candidates for your roles
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                3
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Vetting & Matching</h3>
+              <p className="text-gray-600">
+                We thoroughly screen candidates to ensure the right technical and cultural fit
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                4
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Placement & Support</h3>
+              <p className="text-gray-600">
+                We facilitate the placement and provide ongoing support for long-term success
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Cities Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white" id="locations">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -462,18 +527,22 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-12 border-t border-gray-800">
-            <div>
-              <div className="text-3xl font-bold text-primary-400 mb-2">500+</div>
-              <div className="text-gray-400">Successful Placements</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-12 border-t border-gray-800">
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">500+</div>
+              <div className="text-gray-400 font-medium">Successful Placements</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-primary-400 mb-2">8</div>
-              <div className="text-gray-400">Industries Served</div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">8</div>
+              <div className="text-gray-400 font-medium">Industries Served</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-primary-400 mb-2">4</div>
-              <div className="text-gray-400">Texas Cities</div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">4</div>
+              <div className="text-gray-400 font-medium">Texas Cities</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-primary-400 mb-2">15+</div>
+              <div className="text-gray-400 font-medium">Years Experience</div>
             </div>
           </div>
         </div>
