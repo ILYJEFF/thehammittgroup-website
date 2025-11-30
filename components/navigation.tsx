@@ -16,7 +16,7 @@ export function Navigation() {
               <img
                 src="/logo.png"
                 alt="The Hammitt Group"
-                className="h-10 w-auto"
+                className="h-14 md:h-16 w-auto"
               />
             </Link>
           </div>

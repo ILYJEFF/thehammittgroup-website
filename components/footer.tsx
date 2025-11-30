@@ -10,7 +10,7 @@ export function Footer() {
               <img
                 src="/logo.png"
                 alt="The Hammitt Group"
-                className="h-12 w-auto brightness-0 invert"
+                className="h-16 md:h-20 w-auto brightness-0 invert"
               />
             </div>
             <p className="text-gray-400 mb-4">
