@@ -26,17 +26,32 @@ export default function LoginPage() {
         redirect: false,
       });
 
+      console.log("Login result:", result); // Debug log
+
       if (result?.error) {
-        setError(result.error === "CredentialsSignin" ? "Invalid email or password" : result.error);
+        // Handle different error types
+        const errorMessage = 
+          result.error === "CredentialsSignin" 
+            ? "Invalid email or password" 
+            : result.error === "Configuration"
+            ? "Server configuration error. Please contact support."
+            : typeof result.error === "string"
+            ? result.error
+            : "Invalid email or password";
+        setError(errorMessage);
       } else if (result?.ok) {
         router.push("/admin/dashboard");
         router.refresh();
       } else {
-        setError("An error occurred. Please try again.");
+        setError("Unable to sign in. Please check your credentials and try again.");
       }
     } catch (error: any) {
       console.error("Login error:", error);
-      setError(error?.message || "An error occurred. Please try again.");
+      const errorMessage = 
+        error?.message || 
+        error?.toString() || 
+        "An unexpected error occurred. Please try again.";
+      setError(errorMessage);
     } finally {
       setIsLoading(false);
     }

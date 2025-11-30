@@ -13,16 +13,19 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
-          throw new Error("Email and password are required");
+          return null;
         }
 
         try {
+          // Check database connection first
+          await prisma.$connect();
+
           const admin = await prisma.admin.findUnique({
             where: { email: credentials.email },
           });
 
           if (!admin) {
-            throw new Error("Invalid email or password");
+            return null;
           }
 
           const isPasswordValid = await bcrypt.compare(
@@ -31,7 +34,7 @@ export const authOptions: NextAuthOptions = {
           );
 
           if (!isPasswordValid) {
-            throw new Error("Invalid email or password");
+            return null;
           }
 
           return {
@@ -40,8 +43,8 @@ export const authOptions: NextAuthOptions = {
           };
         } catch (error: any) {
           console.error("Database error during authentication:", error);
-          // Re-throw to show proper error message
-          throw new Error(error.message || "Authentication failed");
+          // Return null instead of throwing to show generic error
+          return null;
         }
       },
     }),
