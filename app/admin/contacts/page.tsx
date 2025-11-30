@@ -28,7 +28,13 @@ export default async function ContactsPage({
 }: {
   searchParams: { city?: string; industry?: string };
 }) {
-  const contacts = await getContacts(searchParams);
+  let contacts;
+  try {
+    contacts = await getContacts(searchParams);
+  } catch (error) {
+    console.error("Error fetching contacts:", error);
+    contacts = [];
+  }
 
   return (
     <div className="py-8">
@@ -38,7 +44,7 @@ export default async function ContactsPage({
             <h1 className="text-3xl font-bold text-gray-900">Contact Submissions</h1>
             <p className="text-gray-600 mt-2">Manage and review contact form submissions</p>
           </div>
-          <ContactsExportButton contacts={contacts} />
+          {contacts.length > 0 && <ContactsExportButton contacts={contacts} />}
         </div>
 
         <Card>

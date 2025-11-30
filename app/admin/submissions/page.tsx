@@ -38,7 +38,13 @@ export default async function SubmissionsPage({
 }: {
   searchParams: { location?: string; industry?: string; status?: string };
 }) {
-  const candidates = await getCandidates(searchParams);
+  let candidates;
+  try {
+    candidates = await getCandidates(searchParams);
+  } catch (error) {
+    console.error("Error fetching candidates:", error);
+    candidates = [];
+  }
 
   return (
     <div className="py-8">
@@ -48,7 +54,7 @@ export default async function SubmissionsPage({
             <h1 className="text-3xl font-bold text-gray-900">Candidate Submissions</h1>
             <p className="text-gray-600 mt-2">Manage candidate resumes and applications</p>
           </div>
-          <SubmissionsExportButton candidates={candidates} />
+          {candidates.length > 0 && <SubmissionsExportButton candidates={candidates} />}
         </div>
 
         <Card>

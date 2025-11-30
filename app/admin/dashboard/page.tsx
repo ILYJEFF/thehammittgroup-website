@@ -49,6 +49,17 @@ export default async function DashboardPage() {
           <p className="text-gray-600 mt-2">Overview of your recruitment activity</p>
         </div>
 
+        {stats.contactCount === 0 && stats.candidateCount === 0 && (
+          <div className="mb-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-blue-900 mb-2">
+              Welcome to The Hammitt Group Admin Dashboard
+            </h3>
+            <p className="text-blue-800">
+              Once you start receiving contact form submissions and candidate resumes, they&apos;ll appear here.
+            </p>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <Card className="hover:shadow-md transition-shadow">
             <CardHeader>
