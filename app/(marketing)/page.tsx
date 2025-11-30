@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { HomepageStats } from "@/components/homepage-stats";
 import { HomepageBenefits } from "@/components/homepage-benefits";
-import { HomepageTestimonials } from "@/components/homepage-testimonials";
 import { ScrollAnimation } from "@/components/ui/scroll-animation";
 
 export const metadata: Metadata = {
@@ -456,9 +455,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <HomepageTestimonials />
 
       {/* CTA Section */}
       <section className="py-16 lg:py-24 bg-gray-900 text-white" id="get-started">
