@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { formatDate } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
 // Using a simple X character instead of icon library
@@ -30,72 +29,14 @@ interface CrmSpreadsheetProps {
 export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
   const router = useRouter();
   const [leads, setLeads] = useState(initialLeads);
-  const [editingCell, setEditingCell] = useState<{ rowId: string; field: string } | null>(null);
-  const [editValue, setEditValue] = useState("");
-  const [isSaving, setIsSaving] = useState(false);
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [panelMessage, setPanelMessage] = useState("");
   const [panelNotes, setPanelNotes] = useState("");
   const [isSavingPanel, setIsSavingPanel] = useState(false);
-  const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
 
   useEffect(() => {
     setLeads(initialLeads);
   }, [initialLeads]);
-
-  useEffect(() => {
-    if (editingCell && inputRef.current) {
-      inputRef.current.focus();
-      inputRef.current.select();
-    }
-  }, [editingCell]);
-
-  const handleCellClick = (rowId: string, field: string, currentValue: string) => {
-    setEditingCell({ rowId, field });
-    setEditValue(currentValue || "");
-  };
-
-  const handleSave = async (rowId: string, field: string) => {
-    if (editValue === leads.find((l) => l.id === rowId)?.[field as keyof Lead]) {
-      setEditingCell(null);
-      return;
-    }
-
-    setIsSaving(true);
-    try {
-      const updateData: any = { [field]: editValue || null };
-      
-      const response = await fetch(`/api/admin/contacts/${rowId}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updateData),
-      });
-
-      if (response.ok) {
-        const updatedLead = await response.json();
-        setLeads(leads.map((l) => (l.id === rowId ? updatedLead : l)));
-        setEditingCell(null);
-        router.refresh();
-      }
-    } catch (error) {
-      console.error("Error saving:", error);
-    } finally {
-      setIsSaving(false);
-    }
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent, rowId: string, field: string) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSave(rowId, field);
-    } else if (e.key === "Escape") {
-      setEditingCell(null);
-    }
-  };
-
-  const handleBlur = (rowId: string, field: string) => {
-    handleSave(rowId, field);
-  };
 
   const handleRowClick = (lead: Lead) => {
     setSelectedLead(lead);
@@ -183,9 +124,6 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
                     onClick={() => handleRowClick(lead)}
                   >
                   {columns.map((col) => {
-                    const isEditing =
-                      editingCell?.rowId === lead.id &&
-                      editingCell?.field === col.key;
                     const value = lead[col.key as keyof Lead];
                     const displayValue: string =
                       col.key === "createdAt" || col.key === "updatedAt"
@@ -195,51 +133,31 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
                     return (
                       <td
                         key={col.key}
-                        className={`px-4 py-2 border-r border-gray-200 ${
-                          isEditing ? "p-0" : "cursor-pointer"
-                        }`}
-                        onClick={() =>
-                          !col.readOnly &&
-                          handleCellClick(lead.id, col.key, String(value || ""))
-                        }
+                        className="px-4 py-2 border-r border-gray-200"
                       >
-                        {isEditing ? (
-                          <Input
-                            ref={inputRef as React.RefObject<HTMLInputElement>}
-                            type={col.key === "email" ? "email" : "text"}
-                            value={editValue}
-                            onChange={(e) => setEditValue(e.target.value)}
-                            onBlur={() => handleBlur(lead.id, col.key)}
-                            onKeyDown={(e) => handleKeyDown(e, lead.id, col.key)}
-                            className="w-full border-0 rounded-none focus:ring-2 focus:ring-primary-500"
-                            disabled={isSaving}
-                            onClick={(e) => e.stopPropagation()}
-                          />
-                        ) : (
-                          <div className="min-h-[24px] flex items-center">
-                            {col.key === "email" ? (
-                              <a
-                                href={`mailto:${displayValue}`}
-                                className="text-primary-600 hover:underline"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                {displayValue}
-                              </a>
-                            ) : col.key === "phone" ? (
-                              <a
-                                href={`tel:${displayValue}`}
-                                className="text-primary-600 hover:underline"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                {displayValue}
-                              </a>
-                            ) : (
-                              <span className="text-sm text-gray-900">
-                                {displayValue}
-                              </span>
-                            )}
-                          </div>
-                        )}
+                        <div className="min-h-[24px] flex items-center">
+                          {col.key === "email" ? (
+                            <a
+                              href={`mailto:${displayValue}`}
+                              className="text-primary-600 hover:underline"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              {displayValue}
+                            </a>
+                          ) : col.key === "phone" ? (
+                            <a
+                              href={`tel:${displayValue}`}
+                              className="text-primary-600 hover:underline"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              {displayValue}
+                            </a>
+                          ) : (
+                            <span className="text-sm text-gray-900">
+                              {displayValue}
+                            </span>
+                          )}
+                        </div>
                       </td>
                     );
                   })}
@@ -254,7 +172,7 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
             Total Leads: <span className="font-semibold">{leads.length}</span>
           </div>
           <div className="text-xs text-gray-500">
-            Click row to view details • Click cell to edit • Press Enter to save • Press Esc to cancel
+            Click any row to view and edit details
           </div>
         </div>
       </div>
