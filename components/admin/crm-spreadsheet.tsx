@@ -143,10 +143,10 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
                       editingCell?.rowId === lead.id &&
                       editingCell?.field === col.key;
                     const value = lead[col.key as keyof Lead];
-                    const displayValue =
+                    const displayValue: string =
                       col.key === "createdAt" || col.key === "updatedAt"
                         ? formatDate(value as Date)
-                        : value || "";
+                        : String(value || "");
 
                     return (
                       <td
