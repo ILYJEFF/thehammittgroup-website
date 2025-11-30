@@ -115,7 +115,7 @@ export default async function BlogPostPage({
             </div>
           )}
 
-          <div className="prose prose-lg max-w-none prose-headings:font-display prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline">
+          <div className="prose prose-lg max-w-none prose-headings:font-display prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline prose-p:leading-relaxed prose-p:mb-6 prose-headings:mb-4 prose-headings:mt-8 prose-h1:text-4xl prose-h1:font-bold prose-h1:mb-6 prose-h2:text-3xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-2xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-4 prose-h4:text-xl prose-h4:font-semibold prose-h4:mt-6 prose-h4:mb-3 prose-ul:mb-6 prose-ol:mb-6 prose-li:mb-2 prose-li:leading-relaxed prose-strong:font-semibold prose-strong:text-gray-900 prose-blockquote:border-l-4 prose-blockquote:border-primary-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:my-6">
             <Suspense fallback={<CardSkeleton />}>
               <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
                 {post.content}
