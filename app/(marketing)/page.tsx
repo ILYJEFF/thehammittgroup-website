@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Metadata } from "next";
 import Script from "next/script";
+import { HomepageStats } from "@/components/homepage-stats";
+import { HomepageBenefits } from "@/components/homepage-benefits";
+import { HomepageTestimonials } from "@/components/homepage-testimonials";
+import { ScrollAnimation } from "@/components/ui/scroll-animation";
 
 export const metadata: Metadata = {
   title: "Texas Manufacturing Recruitment Specialists | The Hammitt Group | DFW, Austin, Houston, San Antonio",
@@ -257,72 +261,27 @@ export default function HomePage() {
                 </Button>
               </Link>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto pt-8 border-t border-white/20">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-1">500+</div>
-                <div className="text-sm text-primary-200">Placements</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-1">8</div>
-                <div className="text-sm text-primary-200">Industries</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-1">4</div>
-                <div className="text-sm text-primary-200">Texas Cities</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-1">15+</div>
-                <div className="text-sm text-primary-200">Years Experience</div>
-              </div>
-            </div>
+            <HomepageStats />
           </div>
         </div>
       </section>
 
       {/* Services Overview */}
-      <section className="py-16 lg:py-24 bg-white" id="why-choose-us">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-4">
-              Why Choose The Hammitt Group
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Texas&apos;s premier manufacturing recruitment agency. We combine deep industry expertise with personalized service to deliver exceptional results for both employers and candidates.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card
-                key={index}
-                className="text-left hover:shadow-xl transition-all duration-300 border-l-4 border-l-primary-600 hover:border-l-primary-700 hover:-translate-y-1 bg-white relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
-                <CardHeader className="relative">
-                  <div className="w-12 h-1 bg-primary-600 mb-4 rounded-full"></div>
-                  <CardTitle className="text-xl md:text-2xl mb-3 text-gray-900 font-bold">
-                    {benefit.title}
-                  </CardTitle>
-                  <CardDescription className="text-base text-gray-700 leading-relaxed">
-                    {benefit.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomepageBenefits />
 
       {/* Industries Section */}
       <section className="py-16 lg:py-24 bg-gray-50" id="industries">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-4">
-              Manufacturing Industries We Serve
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Specialized recruitment expertise across all major Texas manufacturing sectors. From automotive assembly to aerospace production, we understand the unique talent needs of each industry.
-            </p>
-          </div>
+          <ScrollAnimation direction="up">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-4">
+                Manufacturing Industries We Serve
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Specialized recruitment expertise across all major Texas manufacturing sectors. From automotive assembly to aerospace production, we understand the unique talent needs of each industry.
+              </p>
+            </div>
+          </ScrollAnimation>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {industries.map((industry) => (
               <Link
@@ -415,51 +374,49 @@ export default function HomePage() {
       {/* Process Section */}
       <section className="py-16 lg:py-24 bg-gray-50" id="process">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-4">
-              Our Recruitment Process
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              A streamlined approach that delivers results quickly and efficiently
-            </p>
-          </div>
+          <ScrollAnimation direction="up">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-4">
+                Our Recruitment Process
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                A streamlined approach that delivers results quickly and efficiently
+              </p>
+            </div>
+          </ScrollAnimation>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                1
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Consultation</h3>
-              <p className="text-gray-600">
-                We start by understanding your specific needs, company culture, and requirements
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                2
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Talent Search</h3>
-              <p className="text-gray-600">
-                Our network and expertise help us identify the best candidates for your roles
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                3
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Vetting & Matching</h3>
-              <p className="text-gray-600">
-                We thoroughly screen candidates to ensure the right technical and cultural fit
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                4
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Placement & Support</h3>
-              <p className="text-gray-600">
-                We facilitate the placement and provide ongoing support for long-term success
-              </p>
-            </div>
+            {[
+              {
+                step: 1,
+                title: "Consultation",
+                description: "We start by understanding your specific needs, company culture, and requirements",
+              },
+              {
+                step: 2,
+                title: "Talent Search",
+                description: "Our network and expertise help us identify the best candidates for your roles",
+              },
+              {
+                step: 3,
+                title: "Vetting & Matching",
+                description: "We thoroughly screen candidates to ensure the right technical and cultural fit",
+              },
+              {
+                step: 4,
+                title: "Placement & Support",
+                description: "We facilitate the placement and provide ongoing support for long-term success",
+              },
+            ].map((item, index) => (
+              <ScrollAnimation key={index} direction="up" delay={index * 100}>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-lg">
+                    {item.step}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </div>
+              </ScrollAnimation>
+            ))}
           </div>
         </div>
       </section>
@@ -467,23 +424,24 @@ export default function HomePage() {
       {/* Cities Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white" id="locations">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-              Serving Texas Manufacturing Hubs
-            </h2>
-            <p className="text-lg md:text-xl text-primary-100 max-w-3xl mx-auto">
-              Deep connections and local expertise across Texas&apos;s major manufacturing markets. We understand the unique characteristics, talent pools, and opportunities in each region.
-            </p>
-          </div>
+          <ScrollAnimation direction="up">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+                Serving Texas Manufacturing Hubs
+              </h2>
+              <p className="text-lg md:text-xl text-primary-100 max-w-3xl mx-auto">
+                Deep connections and local expertise across Texas&apos;s major manufacturing markets. We understand the unique characteristics, talent pools, and opportunities in each region.
+              </p>
+            </div>
+          </ScrollAnimation>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {cities.map((city) => (
-              <div
-                key={city.abbreviation}
-                className="text-center p-8 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20"
-              >
-                <div className="text-5xl md:text-6xl font-bold mb-3 text-white">{city.abbreviation}</div>
-                <div className="text-primary-100 text-lg md:text-xl font-medium">{city.name}</div>
-              </div>
+            {cities.map((city, index) => (
+              <ScrollAnimation key={city.abbreviation} direction="up" delay={index * 100}>
+                <div className="text-center p-8 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20">
+                  <div className="text-5xl md:text-6xl font-bold mb-3 text-white">{city.abbreviation}</div>
+                  <div className="text-primary-100 text-lg md:text-xl font-medium">{city.name}</div>
+                </div>
+              </ScrollAnimation>
             ))}
           </div>
           <div className="mt-12 text-center">
@@ -499,18 +457,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <HomepageTestimonials />
+
       {/* CTA Section */}
       <section className="py-16 lg:py-24 bg-gray-900 text-white" id="get-started">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-            Ready to Connect?
-          </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-4">
-            Whether you&apos;re a manufacturing company looking for top talent or a professional seeking your next career opportunity in Texas, we&apos;re here to help you succeed.
-          </p>
-          <p className="text-base text-gray-400 max-w-2xl mx-auto mb-12">
-            Join hundreds of Texas manufacturers and thousands of professionals who trust The Hammitt Group for their recruitment needs.
-          </p>
+          <ScrollAnimation direction="up">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+              Ready to Connect?
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-4">
+              Whether you&apos;re a manufacturing company looking for top talent or a professional seeking your next career opportunity in Texas, we&apos;re here to help you succeed.
+            </p>
+            <p className="text-base text-gray-400 max-w-2xl mx-auto mb-12">
+              Join hundreds of Texas manufacturers and thousands of professionals who trust The Hammitt Group for their recruitment needs.
+            </p>
+          </ScrollAnimation>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link href="/contact">
               <Button
