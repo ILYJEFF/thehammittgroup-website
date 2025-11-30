@@ -23,37 +23,37 @@ export const metadata: Metadata = {
   },
 };
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  mainEntity: {
-    "@type": "ProfessionalService",
-    name: "The Hammitt Group",
-    telephone: "+1-254-479-7482",
-    email: "contact@thehammittgroup.com",
-  },
-};
-
-const breadcrumbStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://thehammittgroup.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Contact",
-      item: "https://thehammittgroup.com/contact",
-    },
-  ],
-};
-
 export default function ContactPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    mainEntity: {
+      "@type": "ProfessionalService",
+      name: "The Hammitt Group",
+      telephone: "+1-254-479-7482",
+      email: "contact@thehammittgroup.com",
+    },
+  };
+
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://thehammittgroup.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact",
+        item: "https://thehammittgroup.com/contact",
+      },
+    ],
+  };
+
   return (
     <>
       <Script
