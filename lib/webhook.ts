@@ -1,11 +1,11 @@
 import { ContactSubmission, CandidateSubmission } from "./email";
 
-const WEBHOOKY_URL = "https://webhookreceiver-ps6nryst2a-ey.a.run.app/R0G1lH56fdj4SbEttYFWKNcHavnneLhB";
+const WEBHOOK_URL = "https://hook.swiftapps.us/workspace/ec88a339-39a0-4686-a7f3-e069fc4aa1ec";
 
 export async function sendContactWebhook(submission: ContactSubmission) {
-  if (!process.env.WEBHOOKY_ENABLED || process.env.WEBHOOKY_ENABLED === "true") {
+  if (!process.env.WEBHOOK_ENABLED || process.env.WEBHOOK_ENABLED === "true") {
     try {
-      const response = await fetch(WEBHOOKY_URL, {
+      const response = await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
