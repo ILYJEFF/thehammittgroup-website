@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { z } from "zod";
 import { sendContactNotification } from "@/lib/email";
+import { sendContactWebhook } from "@/lib/webhook";
 
 const contactSchema = z.object({
   companyName: z.string().optional(),
@@ -21,6 +22,14 @@ export async function POST(request: NextRequest) {
     const contact = await prisma.contact.create({
       data: validatedData,
     });
+
+    // Send webhook notification (don't fail if webhook fails)
+    try {
+      await sendContactWebhook(validatedData);
+    } catch (webhookError) {
+      console.error("Failed to send webhook notification:", webhookError);
+      // Continue even if webhook fails - submission is still saved
+    }
 
     // Send email notification (don't fail if email fails)
     try {

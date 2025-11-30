@@ -4,6 +4,7 @@ import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
 import { existsSync } from "fs";
 import { sendCandidateNotification } from "@/lib/email";
+import { sendCandidateWebhook } from "@/lib/webhook";
 
 export async function POST(request: NextRequest) {
   try {
@@ -79,6 +80,25 @@ export async function POST(request: NextRequest) {
         status: "new",
       },
     });
+
+    // Send webhook notification (don't fail if webhook fails)
+    try {
+      await sendCandidateWebhook({
+        firstName,
+        lastName,
+        email,
+        phone,
+        currentLocation,
+        desiredLocation: desiredLocation as "DFW" | "Austin" | "Houston" | "San Antonio",
+        industry,
+        positionType,
+        coverLetter: coverLetter || undefined,
+        resumeUrl,
+      });
+    } catch (webhookError) {
+      console.error("Failed to send webhook notification:", webhookError);
+      // Continue even if webhook fails - submission is still saved
+    }
 
     // Send email notification (don't fail if email fails)
     try {
