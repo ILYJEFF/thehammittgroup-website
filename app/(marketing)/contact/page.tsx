@@ -55,7 +55,7 @@ export default function ContactPage() {
   };
 
   return (
-    <>
+    <div>
       <Script
         id="contact-structured-data"
         type="application/ld+json"
@@ -191,6 +191,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
