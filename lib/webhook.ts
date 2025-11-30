@@ -1,6 +1,6 @@
 import { ContactSubmission, CandidateSubmission } from "./email";
 
-const WEBHOOKY_URL = "https://webhookreceiver-ps6nryst2a-ey.a.run.app/z4xg15m8itdgh2w0y34sse9h0z1ua8zl";
+const WEBHOOKY_URL = "https://webhookreceiver-ps6nryst2a-ey.a.run.app/R0G1lH56fdj4SbEttYFWKNcHavnneLhB";
 
 export async function sendContactWebhook(submission: ContactSubmission) {
   if (!process.env.WEBHOOKY_ENABLED || process.env.WEBHOOKY_ENABLED === "true") {
