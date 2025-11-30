@@ -11,6 +11,7 @@ export function GoogleAnalytics() {
 
   return (
     <>
+      {/* Google tag (gtag.js) */}
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
