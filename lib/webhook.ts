@@ -42,9 +42,9 @@ export async function sendContactWebhook(submission: ContactSubmission) {
 }
 
 export async function sendCandidateWebhook(submission: CandidateSubmission) {
-  if (!process.env.WEBHOOKY_ENABLED || process.env.WEBHOOKY_ENABLED === "true") {
+  if (!process.env.WEBHOOK_ENABLED || process.env.WEBHOOK_ENABLED === "true") {
     try {
-      const response = await fetch(WEBHOOKY_URL, {
+      const response = await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
