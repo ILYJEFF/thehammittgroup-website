@@ -126,10 +126,10 @@ const positions = [
 ];
 
 const cities = [
-  { name: "Dallas-Fort Worth", abbreviation: "DFW" },
-  { name: "Austin", abbreviation: "ATX" },
-  { name: "Houston", abbreviation: "HOU" },
-  { name: "San Antonio", abbreviation: "SAT" },
+  { name: "Dallas-Fort Worth", abbreviation: "DFW", slug: "dfw" },
+  { name: "Austin", abbreviation: "ATX", slug: "austin" },
+  { name: "Houston", abbreviation: "HOU", slug: "houston" },
+  { name: "San Antonio", abbreviation: "SAT", slug: "san-antonio" },
 ];
 
 const benefits = [
@@ -436,10 +436,12 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {cities.map((city, index) => (
               <ScrollAnimation key={city.abbreviation} direction="up" delay={index * 100}>
-                <div className="text-center p-8 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20">
-                  <div className="text-5xl md:text-6xl font-bold mb-3 text-white">{city.abbreviation}</div>
-                  <div className="text-primary-100 text-lg md:text-xl font-medium">{city.name}</div>
-                </div>
+                <Link href={`/locations/${city.slug}`} className="block">
+                  <div className="text-center p-8 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20 cursor-pointer">
+                    <div className="text-5xl md:text-6xl font-bold mb-3 text-white">{city.abbreviation}</div>
+                    <div className="text-primary-100 text-lg md:text-xl font-medium">{city.name}</div>
+                  </div>
+                </Link>
               </ScrollAnimation>
             ))}
           </div>

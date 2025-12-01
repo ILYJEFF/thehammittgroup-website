@@ -50,6 +50,12 @@ export function Navigation() {
               {servicesMenuOpen && (
                 <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                   <Link
+                    href="/services/direct-hire"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                  >
+                    Direct Hire Services
+                  </Link>
+                  <Link
                     href="/services/ats-implementation"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
                   >
@@ -215,6 +221,13 @@ export function Navigation() {
               </button>
               {servicesMenuOpen && (
                 <div className="pl-4 mt-1 space-y-1">
+                  <Link
+                    href="/services/direct-hire"
+                    className="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-gray-50 rounded-md"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Direct Hire Services
+                  </Link>
                   <Link
                     href="/services/ats-implementation"
                     className="block px-3 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-gray-50 rounded-md"

@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   title: "The Hammitt Group | Texas Manufacturing Recruitment Specialists",
   description: "Premier recruiting agency specializing in Texas manufacturing. Connecting top talent with leading manufacturers in DFW, Austin, Houston, and San Antonio.",
   keywords: "Texas manufacturing recruitment, DFW manufacturing jobs, Austin manufacturing recruiters, Houston manufacturing staffing, San Antonio manufacturing careers",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

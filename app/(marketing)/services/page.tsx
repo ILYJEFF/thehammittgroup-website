@@ -34,6 +34,11 @@ const serviceCategories = [
     description: "Our primary services for finding and placing top talent",
     services: [
       {
+        name: "Direct Hire Services",
+        slug: "direct-hire",
+        description: "Permanent placement services for hourly workers, production staff, and low-level management positions.",
+      },
+      {
         name: "RPO (Recruitment Process Outsourcing)",
         slug: "rpo",
         description: "Complete recruitment process management, from sourcing to onboarding, tailored to your needs.",
