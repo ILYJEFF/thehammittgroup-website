@@ -193,7 +193,7 @@ export default function TemporaryStaffingPage() {
                 <div className="prose prose-lg max-w-none">
                   <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg">
                     <li>Rapid deployment of qualified workers, often within 24-48 hours</li>
-                    <li>Reduced administrative burden—we handle payroll, benefits, and HR compliance</li>
+                    <li>Reduced administrative burden - we handle payroll, benefits, and HR compliance</li>
                     <li>Cost-effective solution without long-term employment commitments</li>
                     <li>Access to pre-screened, skilled manufacturing talent</li>
                     <li>Flexibility to adjust workforce size based on production needs</li>

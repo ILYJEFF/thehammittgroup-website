@@ -92,7 +92,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="prose prose-lg max-w-none">
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                    Our mission is to provide personalized, high-touch recruitment services that match the right talent with the right opportunities in Texas manufacturing. We understand that successful placements require more than just matching skills—they require understanding company culture, team dynamics, and long-term career goals.
+                    Our mission is to provide personalized, high-touch recruitment services that match the right talent with the right opportunities in Texas manufacturing. We understand that successful placements require more than just matching skills. They require understanding company culture, team dynamics, and long-term career goals.
                   </p>
                   <p className="text-gray-700 text-lg leading-relaxed">
                     We believe in building lasting relationships with both our clients and candidates. Every placement is an investment in long-term success, not just a quick transaction. This philosophy has earned us a reputation as one of Texas&apos;s most trusted manufacturing recruitment partners.
@@ -112,7 +112,7 @@ export default function AboutPage() {
                     From automotive assembly to aerospace production, from food processing to electronics manufacturing, we have deep expertise across all manufacturing industries. Our team understands the technical requirements, regulatory compliance needs, and operational challenges that make manufacturing recruitment unique.
                   </p>
                   <p className="text-gray-700 text-lg leading-relaxed">
-                    Texas manufacturing is experiencing unprecedented growth, with companies expanding operations and new facilities opening regularly. This growth creates both opportunities and challenges in finding the right talent—which is where we excel.
+                    Texas manufacturing is experiencing unprecedented growth, with companies expanding operations and new facilities opening regularly. This growth creates both opportunities and challenges in finding the right talent, which is where we excel.
                   </p>
                 </div>
               </section>

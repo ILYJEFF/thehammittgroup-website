@@ -36,7 +36,7 @@ const positions: Record<
       "Electronics & Semiconductors",
     ],
     howWeHelp:
-      "We understand the unique requirements of plant management roles and match candidates with the right leadership style and industry experience.",
+      "We understand the unique requirements of plant management roles and match candidates with the right leadership style and industry experience. We also place leaders who are adaptable and can contribute to various operational areas beyond their primary focus.",
   },
   "production-supervisors": {
     name: "Production Supervisors",
@@ -58,7 +58,7 @@ const positions: Record<
       "Metal Fabrication",
     ],
     howWeHelp:
-      "We place supervisors who understand production workflows and can effectively manage teams to meet production goals.",
+      "We place supervisors who understand production workflows and can effectively manage teams to meet production goals. Many of our placements also contribute to quality, safety, and other manufacturing areas as needed.",
   },
   "quality-control": {
     name: "Quality Control & Assurance",
@@ -80,7 +80,7 @@ const positions: Record<
       "Medical Device Manufacturing",
     ],
     howWeHelp:
-      "We match quality professionals with companies that value their expertise in maintaining high standards and regulatory compliance.",
+      "We match quality professionals with companies that value their expertise in maintaining high standards and regulatory compliance. We also place candidates who can contribute to process improvement, training, and other manufacturing functions.",
   },
   "manufacturing-engineers": {
     name: "Manufacturing Engineers",
@@ -102,7 +102,7 @@ const positions: Record<
       "Medical Device Manufacturing",
     ],
     howWeHelp:
-      "We connect manufacturing engineers with opportunities where they can apply their technical expertise to drive process improvements.",
+      "We connect manufacturing engineers with opportunities where they can apply their technical expertise to drive process improvements. Many placements also work on quality initiatives, safety improvements, and cross-functional projects.",
   },
   "maintenance-facilities": {
     name: "Maintenance & Facilities",
@@ -124,7 +124,7 @@ const positions: Record<
       "Oil & Gas Equipment",
     ],
     howWeHelp:
-      "We place skilled maintenance professionals who can keep production lines running and minimize downtime.",
+      "We place skilled maintenance professionals who can keep production lines running and minimize downtime. Our placements often contribute to facilities management, safety improvements, and other operational areas.",
   },
   "supply-chain-logistics": {
     name: "Supply Chain & Logistics",
@@ -146,7 +146,7 @@ const positions: Record<
       "Industrial Machinery",
     ],
     howWeHelp:
-      "We match supply chain professionals with companies that need their expertise in optimizing material flow and inventory management.",
+      "We match supply chain professionals with companies that need their expertise in optimizing material flow and inventory management. Many also contribute to production planning, quality coordination, and other operational functions.",
   },
   "safety-compliance": {
     name: "Safety & Compliance",
@@ -168,7 +168,7 @@ const positions: Record<
       "Food & Beverage",
     ],
     howWeHelp:
-      "We place safety professionals who can develop and implement effective safety programs that protect workers and ensure compliance.",
+      "We place safety professionals who can develop and implement effective safety programs that protect workers and ensure compliance. Our placements often contribute to training, quality initiatives, and environmental programs as well.",
   },
 };
 
@@ -332,7 +332,7 @@ export default function PositionPage({ params }: { params: { slug: string } }) {
                     {position.overview}
                   </p>
                   <p className="text-gray-700 text-lg leading-relaxed">
-                    {position.name} roles are critical to manufacturing success in Texas. These positions require a combination of technical expertise, leadership skills, and industry knowledge. We work with top manufacturing companies across the state to place qualified professionals in these essential roles.
+                    {position.name} roles are critical to manufacturing success in Texas. These positions require a combination of technical expertise, leadership skills, and industry knowledge. We work with top manufacturing companies across the state to place qualified professionals in these essential roles. While these positions focus on specific responsibilities, we also place candidates who are flexible and willing to contribute to other areas of manufacturing operations as needed.
                   </p>
                 </div>
               </section>
@@ -382,7 +382,7 @@ export default function PositionPage({ params }: { params: { slug: string } }) {
                     {position.howWeHelp}
                   </p>
                   <p className="text-gray-700 text-lg leading-relaxed">
-                    Our team understands the specific requirements and expectations for {position.name.toLowerCase()} roles in Texas manufacturing. We work closely with both candidates and employers to ensure the right match—considering not just technical qualifications, but also company culture, team dynamics, and long-term career goals.
+                    Our team understands the specific requirements and expectations for {position.name.toLowerCase()} roles in Texas manufacturing. We work closely with both candidates and employers to ensure the right match, considering not just technical qualifications, but also company culture, team dynamics, and long-term career goals. We also help place professionals who are adaptable and can contribute beyond their primary specialty when opportunities arise.
                   </p>
                 </div>
               </section>
@@ -398,7 +398,7 @@ export default function PositionPage({ params }: { params: { slug: string } }) {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-700">
-                    Submit your resume and let us know you&apos;re interested in {position.name.toLowerCase()} positions. We&apos;ll match you with opportunities that align with your skills and career goals.
+                    Submit your resume and let us know you&apos;re interested in {position.name.toLowerCase()} positions. We&apos;ll match you with opportunities that align with your skills and career goals, including roles where you can contribute to your specialty while also working on other manufacturing areas.
                   </p>
                   <div className="flex flex-col gap-3">
                     <Link href="/submit-resume">

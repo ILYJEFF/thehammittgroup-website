@@ -104,7 +104,7 @@ export default function EmployerBrandConsultingPage() {
                     In today&apos;s competitive manufacturing talent market, your employer brand is one of your most valuable assets. A strong employer brand not only attracts top talent but also reduces recruitment costs, improves candidate quality, and increases employee retention.
                   </p>
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                    Manufacturing companies often face unique challenges in employer branding. Many candidates have misconceptions about manufacturing work—thinking it&apos;s outdated, low-tech, or offers limited career growth. Our employer brand consulting helps you tell your authentic story, showcase your modern facilities, highlight career advancement opportunities, and position your company as an innovative, desirable place to work.
+                    Manufacturing companies often face unique challenges in employer branding. Many candidates have misconceptions about manufacturing work, thinking it&apos;s outdated, low-tech, or offers limited career growth. Our employer brand consulting helps you tell your authentic story, showcase your modern facilities, highlight career advancement opportunities, and position your company as an innovative, desirable place to work.
                   </p>
                 </div>
               </section>
@@ -160,7 +160,7 @@ export default function EmployerBrandConsultingPage() {
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-700">
-                        Improve every touchpoint in the candidate journey—from initial job posting to onboarding—to create a positive, memorable experience that reinforces your employer brand.
+                        Improve every touchpoint in the candidate journey, from initial job posting to onboarding, to create a positive, memorable experience that reinforces your employer brand.
                       </p>
                     </CardContent>
                   </Card>

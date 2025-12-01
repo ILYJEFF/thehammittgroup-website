@@ -130,7 +130,7 @@ export default function RPOPage() {
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-700">
-                        We manage specific parts of your recruitment process—such as sourcing and screening—while your internal team handles interviews and final decisions.
+                        We manage specific parts of your recruitment process, such as sourcing and screening, while your internal team handles interviews and final decisions.
                       </p>
                     </CardContent>
                   </Card>

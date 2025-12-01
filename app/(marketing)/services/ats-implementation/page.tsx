@@ -104,7 +104,7 @@ export default function ATSImplementationPage() {
                     Implementing an Applicant Tracking System (ATS) can transform your recruitment process, but only if it&apos;s configured correctly for your specific needs. Our ATS implementation services ensure your system is set up to maximize efficiency, improve candidate experience, and integrate seamlessly with your existing workflows.
                   </p>
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                    We work with leading ATS platforms including Greenhouse, Lever, Workday, Bullhorn, and others. Our team understands the unique requirements of manufacturing recruitment—from handling high-volume production roles to managing complex technical positions.
+                    We work with leading ATS platforms including Greenhouse, Lever, Workday, Bullhorn, and others. Our team understands the unique requirements of manufacturing recruitment, from handling high-volume production roles to managing complex technical positions.
                   </p>
                 </div>
               </section>
