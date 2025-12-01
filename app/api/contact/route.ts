@@ -9,7 +9,7 @@ const contactSchema = z.object({
   contactName: z.string().min(2),
   email: z.string().email(),
   phone: z.string().min(10),
-  city: z.enum(["DFW", "Austin", "Houston", "San Antonio"]),
+  city: z.string().min(2, "City is required"),
   industry: z.string().optional(),
   message: z.string().min(10),
 });
@@ -45,15 +45,26 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     if (error instanceof z.ZodError) {
+      console.error("Contact form validation error:", error.errors);
       return NextResponse.json(
-        { success: false, error: error.errors },
+        { 
+          success: false, 
+          message: "Validation error",
+          errors: error.errors.map(e => ({
+            field: e.path.join('.'),
+            message: e.message
+          }))
+        },
         { status: 400 }
       );
     }
 
     console.error("Contact submission error:", error);
     return NextResponse.json(
-      { success: false, error: "Internal server error" },
+      { 
+        success: false, 
+        message: error instanceof Error ? error.message : "Internal server error" 
+      },
       { status: 500 }
     );
   }

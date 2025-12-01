@@ -56,8 +56,13 @@ export function ContactForm() {
         });
         reset();
       } else {
-        const error = await response.json().catch(() => ({}));
-        throw new Error(error.message || "Submission failed");
+        const errorData = await response.json().catch(() => ({}));
+        // Handle validation errors
+        if (errorData.errors && Array.isArray(errorData.errors)) {
+          const errorMessages = errorData.errors.map((e: any) => e.message).join(", ");
+          throw new Error(errorMessages || "Please check your form and try again.");
+        }
+        throw new Error(errorData.message || "Submission failed. Please try again.");
       }
     } catch (error: any) {
       toast.error("Something went wrong", {
