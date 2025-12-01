@@ -1,7 +1,15 @@
 import { PrismaClient } from "@prisma/client";
-import slugify from "slugify";
 
 const prisma = new PrismaClient();
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .trim();
+}
 
 function getDateForWeek(weekNumber: number): Date {
   const startDate = new Date("2024-01-01");
