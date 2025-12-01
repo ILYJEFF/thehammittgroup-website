@@ -16,7 +16,8 @@
     "create-admin:auto": "tsx scripts/create-admin-non-interactive.ts",
     "seed-blog": "tsx scripts/seed-blog-posts.ts",
     "seed-blog-additional": "tsx scripts/seed-additional-blog-posts.ts",
-    "seed-blog-29-50": "tsx scripts/seed-blog-posts-29-50.ts"
+    "seed-blog-29-50": "tsx scripts/seed-blog-posts-29-50.ts",
+    "seed-blog-51-70": "tsx scripts/seed-blog-posts-51-70.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
