@@ -65,14 +65,14 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-safe">
       <Card className="w-full max-w-md shadow-xl">
-        <CardHeader className="text-center">
-          <CardTitle className="text-2xl">Admin Login</CardTitle>
-          <CardDescription>Sign in to access the admin dashboard</CardDescription>
+        <CardHeader className="text-center pb-4">
+          <CardTitle className="text-xl md:text-2xl">Admin Login</CardTitle>
+          <CardDescription className="text-sm md:text-base">Sign in to access the admin dashboard</CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                 Email
@@ -84,6 +84,8 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 placeholder="admin@example.com"
+                className="h-12 md:h-11 touch-manipulation"
+                autoComplete="email"
               />
             </div>
             <div>
@@ -96,6 +98,8 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                className="h-12 md:h-11 touch-manipulation"
+                autoComplete="current-password"
               />
             </div>
             {error && (
@@ -103,7 +107,12 @@ export default function LoginPage() {
                 {error}
               </div>
             )}
-            <Button type="submit" variant="primary" className="w-full" disabled={isLoading}>
+            <Button 
+              type="submit" 
+              variant="primary" 
+              className="w-full min-h-[48px] touch-manipulation" 
+              disabled={isLoading}
+            >
               {isLoading ? "Signing in..." : "Sign In"}
             </Button>
           </form>
