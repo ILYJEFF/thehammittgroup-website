@@ -55,7 +55,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="py-16 lg:py-24 bg-gray-50 min-h-screen">
+    <div className="py-8 md:py-16 lg:py-24 bg-gray-50 min-h-screen">
       <Script
         id="contact-structured-data"
         type="application/ld+json"
@@ -71,26 +71,29 @@ export default function ContactPage() {
         }}
       />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6">
+          <div className="text-center mb-8 md:mb-16">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-gray-900 mb-4 md:mb-6">
               Contact The Hammitt Group
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-3 md:mb-4 px-4">
               Ready to find the right talent for your manufacturing team? Get in touch with us today.
             </p>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto px-4">
               We&apos;re here to help you build your manufacturing workforce with top talent across Texas.
             </p>
           </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-8 lg:gap-12">
           {/* Form Section */}
           <div className="lg:col-span-3">
-            <Card className="shadow-lg">
-              <CardHeader className="pb-6">
-                <CardTitle className="text-2xl md:text-3xl">Send Us a Message</CardTitle>
-                <p className="text-gray-600 mt-2 text-lg">
+            <Card className="shadow-lg border-2 border-gray-200">
+              <CardHeader className="pb-4 md:pb-6 px-4 md:px-6 pt-4 md:pt-6">
+                <CardTitle className="text-xl md:text-2xl lg:text-3xl">Send Us a Message</CardTitle>
+                <p className="text-gray-600 mt-3 text-sm md:text-base lg:text-lg">
                   Fill out the form below and we&apos;ll get back to you as soon as possible. We typically respond within 24 hours.
+                </p>
+                <p className="text-gray-700 mt-3 text-sm md:text-base lg:text-lg font-semibold">
+                  Or call us at <a href="tel:2544797482" className="text-primary-600 hover:text-primary-700 font-bold underline">(254) 479-7482</a> for instant assistance.
                 </p>
               </CardHeader>
               <CardContent className="pt-0">
@@ -100,30 +103,30 @@ export default function ContactPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-2 space-y-6">
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-xl">Contact Information</CardTitle>
+          <div className="lg:col-span-2 space-y-4 md:space-y-6">
+            <Card className="shadow-lg border-2 border-gray-200">
+              <CardHeader className="px-4 md:px-6 pt-4 md:pt-6 pb-3">
+                <CardTitle className="text-lg md:text-xl">Contact Information</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-5 md:space-y-6 px-4 md:px-6 pb-4 md:pb-6">
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide">
+                  <h3 className="font-semibold text-gray-900 mb-2 text-xs md:text-sm uppercase tracking-wide">
                     Email
                   </h3>
                   <a
                     href="mailto:contact@thehammittgroup.com"
-                    className="text-primary-600 hover:text-primary-700 text-lg transition-colors"
+                    className="text-primary-600 hover:text-primary-700 text-base md:text-lg font-medium transition-colors break-all"
                   >
                     contact@thehammittgroup.com
                   </a>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide">
+                  <h3 className="font-semibold text-gray-900 mb-2 text-xs md:text-sm uppercase tracking-wide">
                     Phone
                   </h3>
                   <a
                     href="tel:2544797482"
-                    className="text-primary-600 hover:text-primary-700 text-lg transition-colors"
+                    className="text-primary-600 hover:text-primary-700 text-base md:text-lg font-semibold transition-colors touch-manipulation"
                   >
                     (254) 479-7482
                   </a>
