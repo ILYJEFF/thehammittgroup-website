@@ -65,66 +65,69 @@ export default async function DashboardPage() {
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-          <Card className="hover:shadow-md transition-shadow touch-manipulation">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base md:text-lg">Total Contacts</CardTitle>
+        <div className="grid grid-cols-2 gap-3 md:gap-6 mb-6 md:mb-8">
+          <Card className="hover:shadow-lg active:shadow-xl transition-all touch-manipulation border-2 border-primary-100">
+            <CardHeader className="pb-2 px-4 pt-4">
+              <CardTitle className="text-sm md:text-base font-semibold text-gray-700">Contacts</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl md:text-3xl font-bold text-primary-600">
+            <CardContent className="px-4 pb-4">
+              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-1">
                 {stats.contactCount}
               </div>
-              <p className="text-xs md:text-sm text-gray-500 mt-1">Contact form submissions</p>
+              <p className="text-xs text-gray-500">Form submissions</p>
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-md transition-shadow touch-manipulation">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base md:text-lg">Total Candidates</CardTitle>
+          <Card className="hover:shadow-lg active:shadow-xl transition-all touch-manipulation border-2 border-secondary-100">
+            <CardHeader className="pb-2 px-4 pt-4">
+              <CardTitle className="text-sm md:text-base font-semibold text-gray-700">Candidates</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl md:text-3xl font-bold text-secondary-600">
+            <CardContent className="px-4 pb-4">
+              <div className="text-3xl md:text-4xl font-bold text-secondary-600 mb-1">
                 {stats.candidateCount}
               </div>
-              <p className="text-xs md:text-sm text-gray-500 mt-1">Resume submissions</p>
+              <p className="text-xs text-gray-500">Resume submissions</p>
             </CardContent>
           </Card>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-          <Card>
-            <CardHeader className="pb-3">
-              <div className="flex justify-between items-center flex-wrap gap-2">
-                <CardTitle className="text-base md:text-lg">Recent Contacts</CardTitle>
+          <Card className="border-2 border-gray-200">
+            <CardHeader className="pb-3 px-4 pt-4">
+              <div className="flex justify-between items-center">
+                <CardTitle className="text-lg md:text-xl font-bold text-gray-900">Recent Contacts</CardTitle>
                 <Link href="/admin/contacts" className="touch-manipulation">
-                  <Button variant="ghost" size="sm" className="min-h-[44px] min-w-[80px]">View All</Button>
+                  <Button variant="ghost" size="sm" className="min-h-[44px] px-3 text-xs md:text-sm font-semibold text-primary-600">View All</Button>
                 </Link>
               </div>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-4 pb-4">
               <Suspense fallback={<CardSkeleton />}>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {stats.recentContacts.length === 0 ? (
-                    <p className="text-gray-500 text-sm text-center py-4">No contacts yet</p>
+                    <div className="text-center py-8">
+                      <p className="text-gray-500 text-sm">No contacts yet</p>
+                    </div>
                   ) : (
                     stats.recentContacts.map((contact) => (
-                      <div
+                      <Link
                         key={contact.id}
-                        className="border-b border-gray-200 pb-3 last:border-0 hover:bg-gray-50 p-3 md:p-2 rounded transition-colors touch-manipulation min-h-[60px]"
+                        href={`/admin/contacts`}
+                        className="block border-2 border-gray-100 rounded-lg p-4 hover:border-primary-300 hover:bg-primary-50/50 active:bg-primary-100 transition-all touch-manipulation"
                       >
-                        <div className="flex justify-between items-start gap-2">
+                        <div className="flex justify-between items-start gap-3">
                           <div className="flex-1 min-w-0">
-                            <p className="font-medium text-gray-900 text-sm md:text-base truncate">{contact.contactName}</p>
-                            <p className="text-xs md:text-sm text-gray-600 truncate">{contact.email}</p>
+                            <p className="font-bold text-base text-gray-900 mb-1 truncate">{contact.contactName}</p>
+                            <p className="text-sm text-primary-600 font-medium truncate mb-1">{contact.email}</p>
                             {contact.companyName && (
-                              <p className="text-xs md:text-sm text-gray-500 truncate">{contact.companyName}</p>
+                              <p className="text-xs text-gray-600 truncate">{contact.companyName}</p>
                             )}
                           </div>
-                          <span className="text-xs text-gray-500 whitespace-nowrap flex-shrink-0">
+                          <span className="text-xs text-gray-500 whitespace-nowrap flex-shrink-0 font-medium">
                             {formatDate(contact.createdAt)}
                           </span>
                         </div>
-                      </div>
+                      </Link>
                     ))
                   )}
                 </div>
@@ -132,41 +135,44 @@ export default async function DashboardPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="pb-3">
-              <div className="flex justify-between items-center flex-wrap gap-2">
-                <CardTitle className="text-base md:text-lg">Recent Candidates</CardTitle>
+          <Card className="border-2 border-gray-200">
+            <CardHeader className="pb-3 px-4 pt-4">
+              <div className="flex justify-between items-center">
+                <CardTitle className="text-lg md:text-xl font-bold text-gray-900">Recent Candidates</CardTitle>
                 <Link href="/admin/submissions" className="touch-manipulation">
-                  <Button variant="ghost" size="sm" className="min-h-[44px] min-w-[80px]">View All</Button>
+                  <Button variant="ghost" size="sm" className="min-h-[44px] px-3 text-xs md:text-sm font-semibold text-primary-600">View All</Button>
                 </Link>
               </div>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-4 pb-4">
               <Suspense fallback={<CardSkeleton />}>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {stats.recentCandidates.length === 0 ? (
-                    <p className="text-gray-500 text-sm text-center py-4">No candidates yet</p>
+                    <div className="text-center py-8">
+                      <p className="text-gray-500 text-sm">No candidates yet</p>
+                    </div>
                   ) : (
                     stats.recentCandidates.map((candidate) => (
-                      <div
+                      <Link
                         key={candidate.id}
-                        className="border-b border-gray-200 pb-3 last:border-0 hover:bg-gray-50 p-3 md:p-2 rounded transition-colors touch-manipulation min-h-[60px]"
+                        href={`/admin/submissions`}
+                        className="block border-2 border-gray-100 rounded-lg p-4 hover:border-primary-300 hover:bg-primary-50/50 active:bg-primary-100 transition-all touch-manipulation"
                       >
-                        <div className="flex justify-between items-start gap-2">
+                        <div className="flex justify-between items-start gap-3">
                           <div className="flex-1 min-w-0">
-                            <p className="font-medium text-gray-900 text-sm md:text-base truncate">
+                            <p className="font-bold text-base text-gray-900 mb-1 truncate">
                               {candidate.firstName} {candidate.lastName}
                             </p>
-                            <p className="text-xs md:text-sm text-gray-600 truncate">{candidate.email}</p>
-                            <p className="text-xs md:text-sm text-gray-500 truncate">
+                            <p className="text-sm text-primary-600 font-medium truncate mb-1">{candidate.email}</p>
+                            <p className="text-xs text-gray-600 truncate">
                               {candidate.positionType} - {candidate.industry}
                             </p>
                           </div>
-                          <span className="text-xs text-gray-500 whitespace-nowrap flex-shrink-0">
+                          <span className="text-xs text-gray-500 whitespace-nowrap flex-shrink-0 font-medium">
                             {formatDate(candidate.createdAt)}
                           </span>
                         </div>
-                      </div>
+                      </Link>
                     ))
                   )}
                 </div>
