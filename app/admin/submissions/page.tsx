@@ -8,6 +8,8 @@ import { SubmissionsExportButton } from "@/components/admin/submissions-export-b
 import { Badge } from "@/components/ui/badge";
 import { StatusSelector } from "@/components/admin/status-selector";
 
+export const dynamic = 'force-dynamic';
+
 async function getCandidates(searchParams: {
   location?: string;
   industry?: string;

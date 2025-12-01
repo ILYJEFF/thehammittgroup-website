@@ -3,6 +3,8 @@ import { ContactsExportButton } from "@/components/admin/contacts-export-button"
 import { ContactsCrm } from "@/components/admin/contacts-crm";
 import { Suspense } from "react";
 
+export const dynamic = 'force-dynamic';
+
 async function getContacts(searchParams: { 
   city?: string; 
   industry?: string; 
