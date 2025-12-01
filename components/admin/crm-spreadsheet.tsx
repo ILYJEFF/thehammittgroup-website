@@ -90,7 +90,7 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
 
   // Mobile card view
   const MobileCardView = () => (
-    <div className="space-y-4 md:hidden">
+    <div className="crm-mobile-cards space-y-4 md:hidden">
       {leads.length === 0 ? (
         <div className="bg-white rounded-lg border border-gray-200 p-8 text-center">
           <p className="text-gray-500 text-sm">No converted leads yet.</p>
@@ -167,7 +167,7 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
 
   // Desktop table view
   const DesktopTableView = () => (
-    <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden hidden md:block">
+    <div className="crm-desktop-table bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full border-collapse" style={{ minWidth: "100%" }}>
           <thead className="bg-gradient-to-r from-gray-50 to-gray-100 border-b-2 border-gray-300 sticky top-0 z-10">
@@ -262,10 +262,14 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
   return (
     <div className="relative">
       {/* Mobile Card View - shows only on mobile */}
-      <MobileCardView />
+      <div className="block md:hidden">
+        <MobileCardView />
+      </div>
       
       {/* Desktop Table View - shows only on desktop */}
-      <DesktopTableView />
+      <div className="hidden md:block">
+        <DesktopTableView />
+      </div>
 
       {/* Side Panel */}
       {selectedLead && (

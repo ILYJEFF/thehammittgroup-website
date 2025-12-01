@@ -145,5 +145,15 @@
     min-height: 44px;
     min-width: 44px;
   }
+  
+  /* Force hide CRM table on mobile */
+  .crm-desktop-table {
+    display: none !important;
+  }
+  
+  /* Force show CRM mobile cards on mobile */
+  .crm-mobile-cards {
+    display: block !important;
+  }
 }
 
