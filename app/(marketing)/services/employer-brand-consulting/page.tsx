@@ -84,7 +84,6 @@ export default function EmployerBrandConsultingPage() {
 
           {/* Header */}
           <div className="mb-12">
-            <div className="text-5xl mb-6">🎯</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6">
               Employer Brand Consulting
             </h1>

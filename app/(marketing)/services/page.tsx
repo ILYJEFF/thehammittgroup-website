@@ -33,61 +33,51 @@ const services = [
     name: "ATS Implementation & Setup",
     slug: "ats-implementation",
     description: "Expert setup and configuration of Applicant Tracking Systems to streamline your hiring process.",
-    icon: "📋",
   },
   {
     name: "RPO (Recruitment Process Outsourcing)",
     slug: "rpo",
     description: "Complete recruitment process management, from sourcing to onboarding, tailored to your needs.",
-    icon: "🔄",
   },
   {
     name: "Employer Brand Consulting",
     slug: "employer-brand-consulting",
     description: "Build a compelling employer brand that attracts top manufacturing talent to your organization.",
-    icon: "🎯",
   },
   {
     name: "Executive Search & Headhunting",
     slug: "executive-search",
     description: "Targeted search for C-suite and senior leadership positions in manufacturing organizations.",
-    icon: "👔",
   },
   {
     name: "Temporary & Contract Staffing",
     slug: "temporary-staffing",
     description: "Flexible staffing solutions for project-based work, seasonal needs, and temporary positions.",
-    icon: "⏱️",
   },
   {
     name: "Market Intelligence & Salary Benchmarking",
     slug: "market-intelligence",
     description: "Data-driven insights on market rates, talent availability, and competitive positioning.",
-    icon: "📊",
   },
   {
     name: "Onboarding & Integration Support",
     slug: "onboarding-support",
     description: "Smooth transition support to ensure new hires integrate successfully into your organization.",
-    icon: "🤝",
   },
   {
     name: "Skills Assessment & Testing",
     slug: "skills-assessment",
     description: "Comprehensive evaluation of technical skills, competencies, and cultural fit.",
-    icon: "✅",
   },
   {
     name: "Background Checks & Verification",
     slug: "background-checks",
     description: "Thorough verification of credentials, employment history, and background screening.",
-    icon: "🔍",
   },
   {
     name: "Talent Pipeline Development",
     slug: "talent-pipeline",
     description: "Build and maintain a ready pool of qualified candidates for future hiring needs.",
-    icon: "🚀",
   },
 ];
 
@@ -147,7 +137,6 @@ export default function ServicesPage() {
                 <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary-600 hover:border-l-primary-700 bg-white relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-primary-50 rounded-full -mr-12 -mt-12 opacity-30 group-hover:opacity-50 transition-opacity"></div>
                   <CardHeader className="relative">
-                    <div className="text-4xl mb-4">{service.icon}</div>
                     <CardTitle className="text-xl md:text-2xl group-hover:text-primary-600 transition-colors text-gray-900 font-bold">
                       {service.name}
                     </CardTitle>
