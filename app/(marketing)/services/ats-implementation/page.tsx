@@ -102,7 +102,7 @@ export default function ATSImplementationPage() {
                 </h2>
                 <div className="prose prose-lg max-w-none">
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                    Implementing an Applicant Tracking System (ATS) can transform your recruitment process, but only if it's configured correctly for your specific needs. Our ATS implementation services ensure your system is set up to maximize efficiency, improve candidate experience, and integrate seamlessly with your existing workflows.
+                    Implementing an Applicant Tracking System (ATS) can transform your recruitment process, but only if it&apos;s configured correctly for your specific needs. Our ATS implementation services ensure your system is set up to maximize efficiency, improve candidate experience, and integrate seamlessly with your existing workflows.
                   </p>
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
                     We work with leading ATS platforms including Greenhouse, Lever, Workday, Bullhorn, and others. Our team understands the unique requirements of manufacturing recruitment—from handling high-volume production roles to managing complex technical positions.
@@ -186,7 +186,7 @@ export default function ATSImplementationPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-700">
-                    Ready to streamline your recruitment process? Let's discuss your ATS implementation needs.
+                    Ready to streamline your recruitment process? Let&apos;s discuss your ATS implementation needs.
                   </p>
                   <div className="flex flex-col gap-3">
                     <Link href="/contact">
@@ -205,7 +205,7 @@ export default function ATSImplementationPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-xl">What's Included</CardTitle>
+                  <CardTitle className="text-xl">What&apos;s Included</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3 text-gray-700">

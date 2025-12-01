@@ -102,10 +102,10 @@ export default function EmployerBrandConsultingPage() {
                 </h2>
                 <div className="prose prose-lg max-w-none">
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                    In today's competitive manufacturing talent market, your employer brand is one of your most valuable assets. A strong employer brand not only attracts top talent but also reduces recruitment costs, improves candidate quality, and increases employee retention.
+                    In today&apos;s competitive manufacturing talent market, your employer brand is one of your most valuable assets. A strong employer brand not only attracts top talent but also reduces recruitment costs, improves candidate quality, and increases employee retention.
                   </p>
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                    Manufacturing companies often face unique challenges in employer branding. Many candidates have misconceptions about manufacturing work—thinking it's outdated, low-tech, or offers limited career growth. Our employer brand consulting helps you tell your authentic story, showcase your modern facilities, highlight career advancement opportunities, and position your company as an innovative, desirable place to work.
+                    Manufacturing companies often face unique challenges in employer branding. Many candidates have misconceptions about manufacturing work—thinking it&apos;s outdated, low-tech, or offers limited career growth. Our employer brand consulting helps you tell your authentic story, showcase your modern facilities, highlight career advancement opportunities, and position your company as an innovative, desirable place to work.
                   </p>
                 </div>
               </section>
@@ -196,7 +196,7 @@ export default function EmployerBrandConsultingPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-700">
-                    Ready to build a compelling employer brand? Let's discuss how we can help you attract top manufacturing talent.
+                    Ready to build a compelling employer brand? Let&apos;s discuss how we can help you attract top manufacturing talent.
                   </p>
                   <div className="flex flex-col gap-3">
                     <Link href="/contact">

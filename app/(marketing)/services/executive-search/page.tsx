@@ -190,7 +190,7 @@ export default function ExecutiveSearchPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-700">
-                    Ready to find your next executive leader? Let's discuss your search requirements.
+                    Ready to find your next executive leader? Let&apos;s discuss your search requirements.
                   </p>
                   <div className="flex flex-col gap-3">
                     <Link href="/contact">

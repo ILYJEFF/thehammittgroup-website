@@ -198,7 +198,7 @@ export default function RPOPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-700">
-                    Ready to transform your recruitment process? Let's discuss how RPO can work for your manufacturing company.
+                    Ready to transform your recruitment process? Let&apos;s discuss how RPO can work for your manufacturing company.
                   </p>
                   <div className="flex flex-col gap-3">
                     <Link href="/contact">

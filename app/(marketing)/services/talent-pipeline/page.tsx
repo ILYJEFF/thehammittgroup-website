@@ -45,7 +45,7 @@ export default function TalentPipelinePage() {
             <section>
               <h2 className="text-3xl font-display font-bold text-gray-900 mb-6">Proactive Talent Acquisition</h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                Don't wait until you have an open position. Build a talent pipeline of engaged, qualified candidates who are ready when you need them. Reduce time-to-fill and ensure you always have access to top manufacturing talent.
+                Don&apos;t wait until you have an open position. Build a talent pipeline of engaged, qualified candidates who are ready when you need them. Reduce time-to-fill and ensure you always have access to top manufacturing talent.
               </p>
             </section>
           </div>

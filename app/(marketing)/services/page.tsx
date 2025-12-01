@@ -174,7 +174,7 @@ export default function ServicesPage() {
               Ready to Transform Your Recruitment Process?
             </h2>
             <p className="text-lg text-primary-100 max-w-2xl mx-auto mb-8">
-              Let's discuss how our services can help you attract, hire, and retain top manufacturing talent in Texas.
+              Let&apos;s discuss how our services can help you attract, hire, and retain top manufacturing talent in Texas.
             </p>
             <Link href="/contact">
               <Button size="lg" variant="primary" className="bg-white text-primary-900 hover:bg-gray-100 text-lg px-8 py-6">
