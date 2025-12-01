@@ -78,14 +78,14 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
   };
 
   const columns = [
-    { key: "contactName", label: "Name", width: "180px", priority: "high" },
-    { key: "companyName", label: "Company", width: "180px", priority: "medium" },
-    { key: "email", label: "Email", width: "220px", priority: "high" },
-    { key: "phone", label: "Phone", width: "150px", priority: "high" },
-    { key: "city", label: "City", width: "140px", priority: "low" },
-    { key: "industry", label: "Industry", width: "180px", priority: "low" },
-    { key: "createdAt", label: "Created", width: "140px", readOnly: true, priority: "low" },
-    { key: "updatedAt", label: "Updated", width: "140px", readOnly: true, priority: "low" },
+    { key: "contactName", label: "Name", width: "150px", priority: "high" },
+    { key: "companyName", label: "Company", width: "150px", priority: "medium" },
+    { key: "email", label: "Email", width: "200px", priority: "high" },
+    { key: "phone", label: "Phone", width: "130px", priority: "high" },
+    { key: "city", label: "City", width: "120px", priority: "low" },
+    { key: "industry", label: "Industry", width: "150px", priority: "low" },
+    { key: "createdAt", label: "Created", width: "120px", readOnly: true, priority: "low" },
+    { key: "updatedAt", label: "Updated", width: "120px", readOnly: true, priority: "low" },
   ];
 
   // Mobile card view
@@ -102,63 +102,57 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
             <div
               key={lead.id}
               onClick={() => handleRowClick(lead)}
-              className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm active:shadow-md transition-all cursor-pointer touch-manipulation"
+              className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm active:shadow-md transition-all cursor-pointer touch-manipulation"
             >
-              <div className="mb-4">
-                <h3 className="text-lg font-bold text-gray-900 mb-1">{lead.contactName}</h3>
-                {lead.companyName && (
-                  <p className="text-sm text-gray-600 font-medium">{lead.companyName}</p>
-                )}
+              <div className="flex justify-between items-start mb-3 pb-3 border-b border-gray-100">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base font-bold text-gray-900 mb-1">{lead.contactName}</h3>
+                  {lead.companyName && (
+                    <p className="text-sm text-gray-600">{lead.companyName}</p>
+                  )}
+                </div>
               </div>
-              <div className="space-y-3">
-                <div>
-                  <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide block mb-1">
-                    Email
-                  </label>
+              <div className="grid grid-cols-1 gap-2.5 text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-500 font-medium min-w-[60px]">Email:</span>
                   <a
                     href={`mailto:${lead.email}`}
-                    className="text-sm text-primary-600 hover:text-primary-700 font-medium break-all"
+                    className="text-primary-600 hover:text-primary-700 font-medium break-all flex-1"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {lead.email}
                   </a>
                 </div>
-                <div>
-                  <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide block mb-1">
-                    Phone
-                  </label>
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-500 font-medium min-w-[60px]">Phone:</span>
                   <a
                     href={`tel:${lead.phone}`}
-                    className="text-sm text-primary-600 hover:text-primary-700 font-medium"
+                    className="text-primary-600 hover:text-primary-700 font-medium"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {lead.phone}
                   </a>
                 </div>
-                {(lead.city || lead.industry) && (
-                  <div className="flex flex-wrap gap-3 pt-2 border-t border-gray-100">
-                    {lead.city && (
-                      <div>
-                        <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide block mb-1">
-                          City
-                        </label>
-                        <p className="text-sm text-gray-900 font-medium">{lead.city}</p>
-                      </div>
-                    )}
-                    {lead.industry && (
-                      <div>
-                        <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide block mb-1">
-                          Industry
-                        </label>
-                        <p className="text-sm text-gray-900 font-medium">{lead.industry}</p>
-                      </div>
-                    )}
+                {lead.city && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-500 font-medium min-w-[60px]">City:</span>
+                    <span className="text-gray-900 font-medium">{lead.city}</span>
                   </div>
                 )}
+                {lead.industry && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-500 font-medium min-w-[60px]">Industry:</span>
+                    <span className="text-gray-900 font-medium">{lead.industry}</span>
+                  </div>
+                )}
+                <div className="flex items-center gap-2 pt-2 border-t border-gray-100">
+                  <span className="text-gray-500 font-medium min-w-[60px]">Created:</span>
+                  <span className="text-gray-600 text-xs">{formatDate(lead.createdAt)}</span>
+                </div>
               </div>
             </div>
           ))}
-          <div className="bg-white rounded-lg border border-gray-200 p-4 mt-4">
+          <div className="bg-gray-50 rounded-lg border border-gray-200 p-3 mt-4">
             <div className="text-center">
               <p className="text-sm text-gray-700 font-medium">
                 Total Leads: <span className="text-primary-600 font-bold">{leads.length}</span>
@@ -175,13 +169,13 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
   const DesktopTableView = () => (
     <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse min-w-[800px]">
+        <table className="w-full border-collapse" style={{ minWidth: "100%" }}>
           <thead className="bg-gradient-to-r from-gray-50 to-gray-100 border-b-2 border-gray-300 sticky top-0 z-10">
             <tr>
               {columns.map((col) => (
                 <th
                   key={col.key}
-                  className="px-4 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider border-r border-gray-200 whitespace-nowrap"
+                  className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider border-r border-gray-200 whitespace-nowrap"
                   style={{ width: col.width, minWidth: col.width }}
                 >
                   {col.label}
@@ -219,27 +213,28 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
                     return (
                       <td
                         key={col.key}
-                        className="px-4 py-3 border-r border-gray-200"
+                        className="px-3 py-2.5 border-r border-gray-200"
                       >
-                        <div className="min-h-[28px] flex items-center">
+                        <div className="min-h-[24px] flex items-center">
                           {col.key === "email" ? (
                             <a
                               href={`mailto:${displayValue}`}
-                              className="text-sm text-primary-600 hover:text-primary-700 hover:underline font-medium"
+                              className="text-xs text-primary-600 hover:text-primary-700 hover:underline font-medium truncate max-w-full"
                               onClick={(e) => e.stopPropagation()}
+                              title={displayValue}
                             >
                               {displayValue}
                             </a>
                           ) : col.key === "phone" ? (
                             <a
                               href={`tel:${displayValue}`}
-                              className="text-sm text-primary-600 hover:text-primary-700 hover:underline font-medium"
+                              className="text-xs text-primary-600 hover:text-primary-700 hover:underline font-medium"
                               onClick={(e) => e.stopPropagation()}
                             >
                               {displayValue}
                             </a>
                           ) : (
-                            <span className="text-sm text-gray-900 font-medium">
+                            <span className="text-xs text-gray-900 font-medium truncate max-w-full" title={displayValue || ""}>
                               {displayValue || <span className="text-gray-400">—</span>}
                             </span>
                           )}
