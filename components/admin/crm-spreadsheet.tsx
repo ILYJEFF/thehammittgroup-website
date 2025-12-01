@@ -90,7 +90,7 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
 
   // Mobile card view
   const MobileCardView = () => (
-    <div className="space-y-3">
+    <div className="space-y-4 md:hidden">
       {leads.length === 0 ? (
         <div className="bg-white rounded-lg border border-gray-200 p-8 text-center">
           <p className="text-gray-500 text-sm">No converted leads yet.</p>
@@ -102,62 +102,62 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
             <div
               key={lead.id}
               onClick={() => handleRowClick(lead)}
-              className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm active:shadow-md transition-all cursor-pointer touch-manipulation"
+              className="bg-white rounded-lg border-2 border-gray-200 p-5 shadow-md active:shadow-lg active:border-primary-300 transition-all cursor-pointer touch-manipulation min-h-[200px]"
             >
-              <div className="flex justify-between items-start mb-3 pb-3 border-b border-gray-100">
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-base font-bold text-gray-900 mb-1">{lead.contactName}</h3>
-                  {lead.companyName && (
-                    <p className="text-sm text-gray-600">{lead.companyName}</p>
-                  )}
-                </div>
+              <div className="mb-4 pb-4 border-b-2 border-gray-200">
+                <h3 className="text-lg font-bold text-gray-900 mb-1.5">{lead.contactName}</h3>
+                {lead.companyName && (
+                  <p className="text-base text-gray-700 font-semibold">{lead.companyName}</p>
+                )}
               </div>
-              <div className="grid grid-cols-1 gap-2.5 text-sm">
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-500 font-medium min-w-[60px]">Email:</span>
+              <div className="space-y-3.5">
+                <div>
+                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5">Email</div>
                   <a
                     href={`mailto:${lead.email}`}
-                    className="text-primary-600 hover:text-primary-700 font-medium break-all flex-1"
+                    className="text-base text-primary-600 hover:text-primary-700 font-semibold break-all block"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {lead.email}
                   </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-500 font-medium min-w-[60px]">Phone:</span>
+                <div>
+                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5">Phone</div>
                   <a
                     href={`tel:${lead.phone}`}
-                    className="text-primary-600 hover:text-primary-700 font-medium"
+                    className="text-base text-primary-600 hover:text-primary-700 font-semibold block"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {lead.phone}
                   </a>
                 </div>
-                {lead.city && (
-                  <div className="flex items-center gap-2">
-                    <span className="text-gray-500 font-medium min-w-[60px]">City:</span>
-                    <span className="text-gray-900 font-medium">{lead.city}</span>
-                  </div>
-                )}
-                {lead.industry && (
-                  <div className="flex items-center gap-2">
-                    <span className="text-gray-500 font-medium min-w-[60px]">Industry:</span>
-                    <span className="text-gray-900 font-medium">{lead.industry}</span>
-                  </div>
-                )}
-                <div className="flex items-center gap-2 pt-2 border-t border-gray-100">
-                  <span className="text-gray-500 font-medium min-w-[60px]">Created:</span>
-                  <span className="text-gray-600 text-xs">{formatDate(lead.createdAt)}</span>
+                <div className="grid grid-cols-2 gap-4 pt-3 border-t border-gray-100">
+                  {lead.city && (
+                    <div>
+                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5">City</div>
+                      <p className="text-sm text-gray-900 font-semibold">{lead.city}</p>
+                    </div>
+                  )}
+                  {lead.industry && (
+                    <div>
+                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5">Industry</div>
+                      <p className="text-sm text-gray-900 font-semibold">{lead.industry}</p>
+                    </div>
+                  )}
+                </div>
+                <div className="pt-3 border-t border-gray-100">
+                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5">Created</div>
+                  <p className="text-sm text-gray-600 font-medium">{formatDate(lead.createdAt)}</p>
                 </div>
               </div>
             </div>
           ))}
-          <div className="bg-gray-50 rounded-lg border border-gray-200 p-3 mt-4">
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border-2 border-gray-200 p-4 mt-6">
             <div className="text-center">
-              <p className="text-sm text-gray-700 font-medium">
-                Total Leads: <span className="text-primary-600 font-bold">{leads.length}</span>
+              <p className="text-base text-gray-800 font-bold">
+                Total Leads: <span className="text-primary-600 text-lg">{leads.length}</span>
               </p>
-              <p className="text-xs text-gray-500 mt-1">Tap any card to view and edit details</p>
+              <p className="text-sm text-gray-600 mt-2 font-medium">Tap any card above to view and edit details</p>
             </div>
           </div>
         </>
@@ -167,7 +167,7 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
 
   // Desktop table view
   const DesktopTableView = () => (
-    <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden hidden md:block">
       <div className="overflow-x-auto">
         <table className="w-full border-collapse" style={{ minWidth: "100%" }}>
           <thead className="bg-gradient-to-r from-gray-50 to-gray-100 border-b-2 border-gray-300 sticky top-0 z-10">
@@ -262,14 +262,10 @@ export function CrmSpreadsheet({ leads: initialLeads }: CrmSpreadsheetProps) {
   return (
     <div className="relative">
       {/* Mobile Card View - shows only on mobile */}
-      <div className="md:hidden">
-        <MobileCardView />
-      </div>
+      <MobileCardView />
       
       {/* Desktop Table View - shows only on desktop */}
-      <div className="hidden md:block">
-        <DesktopTableView />
-      </div>
+      <DesktopTableView />
 
       {/* Side Panel */}
       {selectedLead && (
