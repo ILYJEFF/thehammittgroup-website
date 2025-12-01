@@ -8,7 +8,6 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select } from "@/components/ui/select";
 import { LoadingSpinner } from "@/components/ui/loading";
 import { trackConversion } from "@/components/analytics/google-analytics";
 
@@ -17,9 +16,7 @@ const contactSchema = z.object({
   contactName: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(10, "Phone number is required"),
-  city: z.enum(["DFW", "Austin", "Houston", "San Antonio"], {
-    required_error: "Please select a city",
-  }),
+  city: z.string().min(2, "City is required"),
   industry: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
@@ -141,13 +138,12 @@ export function ContactForm() {
           <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2.5">
             City <span className="text-red-500">*</span>
           </label>
-          <Select id="city" {...register("city")} className="h-11">
-            <option value="">Select a city</option>
-            <option value="DFW">Dallas-Fort Worth</option>
-            <option value="Austin">Austin</option>
-            <option value="Houston">Houston</option>
-            <option value="San Antonio">San Antonio</option>
-          </Select>
+          <Input
+            id="city"
+            {...register("city")}
+            placeholder="e.g., Dallas, Austin, Houston, San Antonio"
+            className="h-11"
+          />
           {errors.city && (
             <p className="mt-2 text-sm text-red-600">{errors.city.message}</p>
           )}
