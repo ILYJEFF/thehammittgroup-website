@@ -277,7 +277,7 @@ export default function HomePage() {
                 Manufacturing Industries We Serve
               </h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Specialized recruitment expertise across all major Texas manufacturing sectors. From automotive assembly to aerospace production, we understand the unique talent needs of each industry.
+                Specialized recruitment expertise across all major Texas manufacturing sectors. From automotive assembly to aerospace production, we understand the unique talent needs of each industry. While manufacturing is our specialty, we also work with positions and companies across other industries throughout Texas.
               </p>
             </div>
           </ScrollAnimation>

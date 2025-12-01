@@ -79,7 +79,7 @@ export default function AboutPage() {
               About The Hammitt Group
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Texas&apos;s premier boutique recruiting agency specializing in manufacturing. We connect top talent with leading manufacturers across Dallas-Fort Worth, Austin, Houston, and San Antonio.
+              Texas&apos;s premier boutique recruiting agency specializing in manufacturing. We connect top talent with leading manufacturers across Dallas-Fort Worth, Austin, Houston, and San Antonio. While manufacturing is our specialty, we also work with companies and candidates across other industries and positions.
             </p>
           </div>
 
@@ -142,8 +142,11 @@ export default function AboutPage() {
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
                     We&apos;re proud to serve manufacturing companies and professionals throughout Texas, with a focus on the major manufacturing hubs: Dallas-Fort Worth, Austin, Houston, and San Antonio. Our local expertise helps us understand the unique characteristics of each market.
                   </p>
-                  <p className="text-gray-700 text-lg leading-relaxed">
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
                     Each Texas manufacturing market has its own personality, talent pool, and competitive landscape. Our deep connections in each region allow us to navigate these nuances effectively, ensuring we can find the right talent or opportunity regardless of location.
+                  </p>
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    While manufacturing is our specialty, we&apos;re not limited to just manufacturing roles or industries. We have the flexibility and expertise to help with positions across various sectors and industries throughout Texas. If you have a recruitment need outside of manufacturing, we&apos;re happy to discuss how we can help.
                   </p>
                 </div>
               </section>

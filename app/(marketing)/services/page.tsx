@@ -28,56 +28,80 @@ export const metadata: Metadata = {
   },
 };
 
-const services = [
+const serviceCategories = [
   {
-    name: "ATS Implementation & Setup",
-    slug: "ats-implementation",
-    description: "Expert setup and configuration of Applicant Tracking Systems to streamline your hiring process.",
+    title: "Core Recruitment Services",
+    description: "Our primary services for finding and placing top talent",
+    services: [
+      {
+        name: "RPO (Recruitment Process Outsourcing)",
+        slug: "rpo",
+        description: "Complete recruitment process management, from sourcing to onboarding, tailored to your needs.",
+      },
+      {
+        name: "Executive Search & Headhunting",
+        slug: "executive-search",
+        description: "Targeted search for C-suite and senior leadership positions in manufacturing organizations.",
+      },
+      {
+        name: "Temporary & Contract Staffing",
+        slug: "temporary-staffing",
+        description: "Flexible staffing solutions for project-based work, seasonal needs, and temporary positions.",
+      },
+    ],
   },
   {
-    name: "RPO (Recruitment Process Outsourcing)",
-    slug: "rpo",
-    description: "Complete recruitment process management, from sourcing to onboarding, tailored to your needs.",
+    title: "Recruitment Technology & Systems",
+    description: "Technology solutions to optimize your hiring process",
+    services: [
+      {
+        name: "ATS Implementation & Setup",
+        slug: "ats-implementation",
+        description: "Expert setup and configuration of Applicant Tracking Systems to streamline your hiring process.",
+      },
+      {
+        name: "Talent Pipeline Development",
+        slug: "talent-pipeline",
+        description: "Build and maintain a ready pool of qualified candidates for future hiring needs.",
+      },
+    ],
   },
   {
-    name: "Employer Brand Consulting",
-    slug: "employer-brand-consulting",
-    description: "Build a compelling employer brand that attracts top manufacturing talent to your organization.",
+    title: "Consulting & Strategy",
+    description: "Strategic guidance to improve your recruitment outcomes",
+    services: [
+      {
+        name: "Employer Brand Consulting",
+        slug: "employer-brand-consulting",
+        description: "Build a compelling employer brand that attracts top manufacturing talent to your organization.",
+      },
+      {
+        name: "Market Intelligence & Salary Benchmarking",
+        slug: "market-intelligence",
+        description: "Data-driven insights on market rates, talent availability, and competitive positioning.",
+      },
+    ],
   },
   {
-    name: "Executive Search & Headhunting",
-    slug: "executive-search",
-    description: "Targeted search for C-suite and senior leadership positions in manufacturing organizations.",
-  },
-  {
-    name: "Temporary & Contract Staffing",
-    slug: "temporary-staffing",
-    description: "Flexible staffing solutions for project-based work, seasonal needs, and temporary positions.",
-  },
-  {
-    name: "Market Intelligence & Salary Benchmarking",
-    slug: "market-intelligence",
-    description: "Data-driven insights on market rates, talent availability, and competitive positioning.",
-  },
-  {
-    name: "Onboarding & Integration Support",
-    slug: "onboarding-support",
-    description: "Smooth transition support to ensure new hires integrate successfully into your organization.",
-  },
-  {
-    name: "Skills Assessment & Testing",
-    slug: "skills-assessment",
-    description: "Comprehensive evaluation of technical skills, competencies, and cultural fit.",
-  },
-  {
-    name: "Background Checks & Verification",
-    slug: "background-checks",
-    description: "Thorough verification of credentials, employment history, and background screening.",
-  },
-  {
-    name: "Talent Pipeline Development",
-    slug: "talent-pipeline",
-    description: "Build and maintain a ready pool of qualified candidates for future hiring needs.",
+    title: "Support Services",
+    description: "Additional services to ensure successful placements",
+    services: [
+      {
+        name: "Skills Assessment & Testing",
+        slug: "skills-assessment",
+        description: "Comprehensive evaluation of technical skills, competencies, and cultural fit.",
+      },
+      {
+        name: "Background Checks & Verification",
+        slug: "background-checks",
+        description: "Thorough verification of credentials, employment history, and background screening.",
+      },
+      {
+        name: "Onboarding & Integration Support",
+        slug: "onboarding-support",
+        description: "Smooth transition support to ensure new hires integrate successfully into your organization.",
+      },
+    ],
   },
 ];
 
@@ -125,35 +149,48 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {services.map((service) => (
-              <Link
-                key={service.slug}
-                href={`/services/${service.slug}`}
-                className="group"
-                aria-label={`Learn more about ${service.name}`}
-              >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary-600 hover:border-l-primary-700 bg-white relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-primary-50 rounded-full -mr-12 -mt-12 opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                  <CardHeader className="relative">
-                    <CardTitle className="text-xl md:text-2xl group-hover:text-primary-600 transition-colors text-gray-900 font-bold">
-                      {service.name}
-                    </CardTitle>
-                    <CardDescription className="text-gray-700 text-base mt-3 leading-relaxed">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="relative">
-                    <span className="text-primary-600 font-semibold group-hover:underline inline-flex items-center">
-                      Learn more
-                      <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </CardContent>
-                </Card>
-              </Link>
+          {/* Services by Category */}
+          <div className="space-y-16 mb-16">
+            {serviceCategories.map((category, categoryIndex) => (
+              <section key={categoryIndex} className="scroll-mt-24">
+                <div className="mb-8">
+                  <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-3">
+                    {category.title}
+                  </h2>
+                  <p className="text-lg text-gray-600 max-w-3xl">
+                    {category.description}
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {category.services.map((service) => (
+                    <Link
+                      key={service.slug}
+                      href={`/services/${service.slug}`}
+                      className="group"
+                      aria-label={`Learn more about ${service.name}`}
+                    >
+                      <Card className="h-full hover:shadow-lg transition-all duration-300 border-2 border-gray-200 hover:border-primary-400 bg-white">
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-lg md:text-xl group-hover:text-primary-600 transition-colors text-gray-900 font-bold leading-tight">
+                            {service.name}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="pt-0">
+                          <CardDescription className="text-gray-600 text-sm leading-relaxed mb-4">
+                            {service.description}
+                          </CardDescription>
+                          <div className="flex items-center text-primary-600 font-medium text-sm group-hover:underline">
+                            Learn more
+                            <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
 
@@ -176,4 +213,3 @@ export default function ServicesPage() {
     </>
   );
 }
-

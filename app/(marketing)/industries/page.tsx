@@ -113,7 +113,7 @@ export default function IndustriesPage() {
               Deep expertise across Texas manufacturing sectors. We understand the unique talent needs, operational challenges, and regulatory requirements of each industry.
             </p>
             <p className="text-lg text-gray-500 max-w-3xl mx-auto">
-              From automotive assembly to aerospace production, from food processing to electronics manufacturing, we have specialized knowledge in every major Texas manufacturing sector.
+              From automotive assembly to aerospace production, from food processing to electronics manufacturing, we have specialized knowledge in every major Texas manufacturing sector. While manufacturing is our primary focus, we also work with companies and positions across other industries throughout Texas.
             </p>
           </div>
 

@@ -108,7 +108,7 @@ export default function PositionsPage() {
               From entry-level production workers to C-suite executives, we place talent across all manufacturing roles throughout Texas.
             </p>
             <p className="text-lg text-gray-500 max-w-3xl mx-auto">
-              Our expertise spans operations, engineering, quality control, maintenance, supply chain, safety, and executive leadership positions.
+              Our expertise spans operations, engineering, quality control, maintenance, supply chain, safety, and executive leadership positions. While these are our core specialties, we also work with positions and roles outside of manufacturing across various industries in Texas.
             </p>
           </div>
 
