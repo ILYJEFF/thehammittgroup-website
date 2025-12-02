@@ -67,6 +67,11 @@ const industries = [
     description: "Packaging solutions and plastics manufacturing expertise across Texas.",
   },
   {
+    name: "Injection Molding",
+    slug: "injection-molding",
+    description: "Specialized injection molding recruitment for automotive, packaging, consumer goods, and oil & gas industries.",
+  },
+  {
     name: "Metal Fabrication",
     slug: "metal-fabrication",
     description: "Metalworking, welding, and fabrication recruitment specialists.",
