@@ -128,7 +128,7 @@ export default function InjectionMoldingPage() {
               Why Texas Plastics Teams Choose Hammitt
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Manufacturing leaders don't need another generic recruiter. You need someone who understands the unique challenges of injection molding operations.
+              Manufacturing leaders don&apos;t need another generic recruiter. You need someone who understands the unique challenges of injection molding operations.
             </p>
           </div>
 
@@ -173,7 +173,7 @@ export default function InjectionMoldingPage() {
 
           <div className="bg-primary-50 border-l-4 border-primary-600 p-6 rounded-r-lg">
             <p className="text-lg text-gray-900 font-medium">
-              We recruit exclusively into the plastics and injection molding ecosystem across Texas. This isn't a side specialty for us it's our core focus.
+              We recruit exclusively into the plastics and injection molding ecosystem across Texas. This isn&apos;t a side specialty for us it&apos;s our core focus.
             </p>
           </div>
         </div>
@@ -513,7 +513,7 @@ export default function InjectionMoldingPage() {
             </CardHeader>
             <CardContent>
               <p className="text-white text-lg">
-                If it doesn't work out, we replace them. No drama, no excuses. We stand behind our placements.
+                If it doesn&apos;t work out, we replace them. No drama, no excuses. We stand behind our placements.
               </p>
             </CardContent>
           </Card>
@@ -575,7 +575,7 @@ export default function InjectionMoldingPage() {
             Ready to Hire Plastics Talent?
           </h2>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            Let's build your pipeline. Get multiple qualified candidates in 30 days with our proven recruiting sprint.
+            Let&apos;s build your pipeline. Get multiple qualified candidates in 30 days with our proven recruiting sprint.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/contact">
